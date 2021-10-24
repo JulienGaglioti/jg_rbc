@@ -8,6 +8,7 @@ public class PieceCreator : MonoBehaviour
     [SerializeField] private GameObject[] piecesPrefabs;
     [SerializeField] private Material blackMaterial;
     [SerializeField] private Material whiteMaterial;
+    [SerializeField] private Transform piecesParentTransform;
     private Dictionary<string, GameObject> _nameToPieceDict = new Dictionary<string, GameObject>();
 
     private void Awake()
@@ -23,7 +24,7 @@ public class PieceCreator : MonoBehaviour
         GameObject prefab = _nameToPieceDict[type.ToString()];
         if (prefab)
         {
-            GameObject newPiece = Instantiate(prefab);
+            GameObject newPiece = Instantiate(prefab, piecesParentTransform);
             return newPiece;
         }
 

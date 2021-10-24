@@ -42,7 +42,10 @@ public abstract class Piece : MonoBehaviour
 
     public virtual void MovePiece(Vector2Int coords)
     {
-
+        Vector3 targetPosition = Board.CalculatePositionFromCoords(coords);
+        OccupiedSquare = coords;
+        HasMoved = true;
+        tweener.MoveTo(transform, targetPosition);
     }
 
     protected void TryToAddMove(Vector2Int coords)
