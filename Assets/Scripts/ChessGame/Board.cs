@@ -37,29 +37,31 @@ public class Board : MonoBehaviour
     public void OnSquareSelected(Vector3 inputPosition)
     {
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
-        Piece piece = GetPieceOnSquare(coords);
+        Piece clickedPiece = GetPieceOnSquare(coords);
         
-        Debug.Log("coord: "+coords+", piece: "+piece);
+        // Debug.Log("coord: "+coords+", piece: "+clickedPiece);
         
         if (selectedPiece)
         {
-            if (piece != null && selectedPiece == piece)
+            if (clickedPiece != null && selectedPiece == clickedPiece)
                 DeselectPiece();
-            else if (piece != null && selectedPiece != piece && chessController.IsTeamTurnActive(piece.Team))
+            else if (clickedPiece != null && selectedPiece != clickedPiece && chessController.IsTeamTurnActive(clickedPiece.Team))
                 SelectPiece(coords);
             else if (selectedPiece.CanMoveTo(coords))
                 OnSelectedPieceMoved(coords);
         }
         else
         {
-            if (piece != null && chessController.IsTeamTurnActive(piece.Team))
+            if (clickedPiece != null && chessController.IsTeamTurnActive(clickedPiece.Team))
+            {
                 SelectPiece(coords);
+            }
         }
     }
 
     private void SelectPiece(Vector2Int coords)
     {
-        Piece piece = GetPieceOnSquare(coords);
+        selectedPiece = GetPieceOnSquare(coords);
     }
 
     private void DeselectPiece()
@@ -70,6 +72,7 @@ public class Board : MonoBehaviour
 
     internal void OnSelectedPieceMoved(Vector2Int intCoords)
     {
+        Debug.Log("Moving " + selectedPiece.name + " on " + intCoords);
         UpdateBoardOnPieceMove(intCoords, selectedPiece.OccupiedSquare, selectedPiece, null);
         selectedPiece.MovePiece(intCoords);
         DeselectPiece();
@@ -82,7 +85,7 @@ public class Board : MonoBehaviour
     }
     
 
-    private Piece GetPieceOnSquare(Vector2Int coords)
+    public Piece GetPieceOnSquare(Vector2Int coords)
     {
         if (CheckIfCoordinatesAreOnBoard(coords))
             return grid[coords.x, coords.y];

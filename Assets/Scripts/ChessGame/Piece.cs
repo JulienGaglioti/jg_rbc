@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Piece : MonoBehaviour
 {
     [SerializeField] private MaterialSetter materialSetter;
-    public Board Board { protected get; set; }
+    public Board ChessBoard { protected get; set; }
     public Vector2Int OccupiedSquare { get; set; }
     public TeamColor Team { get; set; }
     public bool HasMoved { get; private set; }
@@ -42,7 +42,7 @@ public abstract class Piece : MonoBehaviour
 
     public virtual void MovePiece(Vector2Int coords)
     {
-        Vector3 targetPosition = Board.CalculatePositionFromCoords(coords);
+        Vector3 targetPosition = ChessBoard.CalculatePositionFromCoords(coords);
         OccupiedSquare = coords;
         HasMoved = true;
         tweener.MoveTo(transform, targetPosition);
@@ -57,7 +57,7 @@ public abstract class Piece : MonoBehaviour
     {
         Team = team;
         OccupiedSquare = coords;
-        Board = board;
+        ChessBoard = board;
         transform.position = board.CalculatePositionFromCoords(coords);
     }
 }

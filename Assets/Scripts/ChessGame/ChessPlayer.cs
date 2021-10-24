@@ -33,7 +33,7 @@ public class ChessPlayer
         {
             if (board.HasPiece(piece))
             {
-                //piece.SelectAvailableSquares();
+                piece.SelectAvailableSquares();
             }
         }
     }
