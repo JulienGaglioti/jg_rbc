@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SquareSelectorCreator))]
 public class Board : MonoBehaviour
 {
     public const int BOARD_SIZE = 8;
@@ -11,17 +12,19 @@ public class Board : MonoBehaviour
     [SerializeField] private float squareSize;
 
     private Piece[,] grid;
-    private Piece selectedPiece;
-    private ChessGameController chessController;
+    private Piece _selectedPiece;
+    private ChessGameController _chessController;
+    private SquareSelectorCreator _squareSelectorCreator;
 
     private void Awake()
     {
+        _squareSelectorCreator = GetComponent<SquareSelectorCreator>();
         CreateGrid();
     }
 
     public void SetDependencies(ChessGameController chessController)
     {
-        this.chessController = chessController;
+        _chessController = chessController;
     }
 
     private void CreateGrid()
@@ -41,40 +44,55 @@ public class Board : MonoBehaviour
         
         // Debug.Log("coord: "+coords+", piece: "+clickedPiece);
         
-        if (selectedPiece)
+        if (_selectedPiece)
         {
-            if (clickedPiece != null && selectedPiece == clickedPiece)
+            if (clickedPiece != null && _selectedPiece == clickedPiece)
                 DeselectPiece();
-            else if (clickedPiece != null && selectedPiece != clickedPiece && chessController.IsTeamTurnActive(clickedPiece.Team))
-                SelectPiece(coords);
-            else if (selectedPiece.CanMoveTo(coords))
+            else if (clickedPiece != null && _selectedPiece != clickedPiece && _chessController.IsTeamTurnActive(clickedPiece.Team))
+                SelectPiece(clickedPiece);
+            else if (_selectedPiece.CanMoveTo(coords))
                 OnSelectedPieceMoved(coords);
         }
         else
         {
-            if (clickedPiece != null && chessController.IsTeamTurnActive(clickedPiece.Team))
+            if (clickedPiece != null && _chessController.IsTeamTurnActive(clickedPiece.Team))
             {
-                SelectPiece(coords);
+                SelectPiece(clickedPiece);
             }
         }
     }
 
-    private void SelectPiece(Vector2Int coords)
+    private void SelectPiece(Piece piece)
     {
-        selectedPiece = GetPieceOnSquare(coords);
+        _selectedPiece = piece;
+        List<Vector2Int> indicatorSquares = _selectedPiece.availableMoves;
+        ShowIndicatorSquares(indicatorSquares);
+    }
+
+    private void ShowIndicatorSquares(List<Vector2Int> indicatorSquares)
+    {
+        Dictionary<Vector3, bool> squaresData = new Dictionary<Vector3, bool>();
+        for (int i = 0; i < indicatorSquares.Count; i++)
+        {
+            Vector3 position = CalculatePositionFromCoords(indicatorSquares[i]);
+            bool isSquareFree = GetPieceOnSquare(indicatorSquares[i]) == null;
+            squaresData.Add(position, isSquareFree);
+        }
+
+        _squareSelectorCreator.ShowSelection(squaresData);
     }
 
     private void DeselectPiece()
     {
-        selectedPiece = null;
-        //squareSelector.ClearSelection();
+        _selectedPiece = null;
+        _squareSelectorCreator.ClearSelection();
     }
 
     internal void OnSelectedPieceMoved(Vector2Int intCoords)
     {
-        Debug.Log("Moving " + selectedPiece.name + " on " + intCoords);
-        UpdateBoardOnPieceMove(intCoords, selectedPiece.OccupiedSquare, selectedPiece, null);
-        selectedPiece.MovePiece(intCoords);
+        // Debug.Log("Moving " + _selectedPiece.name + " on " + intCoords);
+        UpdateBoardOnPieceMove(intCoords, _selectedPiece.OccupiedSquare, _selectedPiece, null);
+        _selectedPiece.MovePiece(intCoords);
         DeselectPiece();
         EndTurn();
     }
@@ -108,7 +126,7 @@ public class Board : MonoBehaviour
 
     private void EndTurn()
     {
-        chessController.EndTurn();
+        _chessController.EndTurn();
     }
 
     public bool HasPiece(Piece piece)
