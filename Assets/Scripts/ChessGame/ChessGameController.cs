@@ -14,6 +14,7 @@ public class ChessGameController : MonoBehaviour
     
     [SerializeField] private BoardLayout startingBoardLayout;
     [SerializeField] private Board board;
+    [SerializeField] private UIManager uiManager;
     
     private PieceCreator _pieceCreator;
     private ChessPlayer _whitePlayer;
@@ -56,11 +57,27 @@ public class ChessGameController : MonoBehaviour
     private void StartNewGame()
     {
         SetGameState(GameState.Init);
+        uiManager.HideEndGameScreen();
         board.SetDependencies(this);
         CreatePiecesFromLayout(startingBoardLayout);
         _activePlayer = _whitePlayer;
         GenerateAllPossiblePlayerMoves(_activePlayer);
         SetGameState(GameState.Play);
+    }
+
+    public void RestartGame()
+    {
+        DestroyAllPieces();
+        board.OnGameRestarted();
+        _whitePlayer.OnGameRestarted();
+        _blackPlayer.OnGameRestarted();
+        StartNewGame();
+    }
+
+    private void DestroyAllPieces()
+    {
+        _whitePlayer.ActivePieces.ForEach(p => Destroy(p.gameObject));
+        _blackPlayer.ActivePieces.ForEach(p => Destroy(p.gameObject));
     }
 
     private void CreatePiecesFromLayout(BoardLayout layout)
@@ -130,7 +147,7 @@ public class ChessGameController : MonoBehaviour
     private void EndGame()
     {
         SetGameState(GameState.Finished);
-        print("Game Ended");
+        uiManager.OnGameFinished(_activePlayer.Team.ToString());
     }
 
     private void GenerateAllPossiblePlayerMoves(ChessPlayer player)

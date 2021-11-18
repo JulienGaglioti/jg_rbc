@@ -173,4 +173,10 @@ public class Board : MonoBehaviour
         if (CheckIfCoordinatesAreOnBoard(coords))
             grid[coords.x, coords.y] = piece;
     }
+
+    public void OnGameRestarted()
+    {
+        _selectedPiece = null;
+        CreateGrid();
+    }
 }
