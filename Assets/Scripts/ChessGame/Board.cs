@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SquareSelectorCreator))]
-public class Board : MonoBehaviour
+public abstract class Board : MonoBehaviour
 {
     public const int BOARD_SIZE = 8;
     
@@ -21,6 +21,9 @@ public class Board : MonoBehaviour
         _squareSelectorCreator = GetComponent<SquareSelectorCreator>();
         CreateGrid();
     }
+
+    public abstract void SelectedPieceMoved(Vector2 coords);
+    public abstract void SetSelectedPiece(Vector2 coords);
 
     public void SetDependencies(ChessGameController chessController)
     {
@@ -52,23 +55,24 @@ public class Board : MonoBehaviour
             if (clickedPiece != null && _selectedPiece == clickedPiece)
                 DeselectPiece();
             else if (clickedPiece != null && _selectedPiece != clickedPiece && _chessController.IsTeamTurnActive(clickedPiece.Team))
-                SelectPiece(clickedPiece);
+                SelectPiece(coords);
             else if (_selectedPiece.CanMoveTo(coords))
-                OnSelectedPieceMoved(coords);
+                SelectedPieceMoved(coords);
         }
         else
         {
             if (clickedPiece != null && _chessController.IsTeamTurnActive(clickedPiece.Team))
             {
-                SelectPiece(clickedPiece);
+                SelectPiece(coords);
             }
         }
     }
 
-    private void SelectPiece(Piece piece)
+    private void SelectPiece(Vector2Int coords)
     {
+        Piece piece = GetPieceOnSquare(coords);
         _chessController.RemoveMovesEnablingAttackOnPieceOfType<King>(piece);
-        _selectedPiece = piece;
+        SetSelectedPiece(coords);
         List<Vector2Int> indicatorSquares = _selectedPiece.availableMoves;
         ShowIndicatorSquares(indicatorSquares);
     }
@@ -92,7 +96,7 @@ public class Board : MonoBehaviour
         _squareSelectorCreator.ClearSelection();
     }
 
-    internal void OnSelectedPieceMoved(Vector2Int intCoords)
+    public void OnSelectedPieceMoved(Vector2Int intCoords)
     {
         // Debug.Log("Moving " + _selectedPiece.name + " on " + intCoords);
         TryToTakeOpponentPiece(intCoords);
@@ -100,6 +104,12 @@ public class Board : MonoBehaviour
         _selectedPiece.MovePiece(intCoords);
         DeselectPiece();
         EndTurn();
+    }
+
+    public void OnSetSelectedPiece(Vector2Int intCoords)
+    {
+        Piece piece = GetPieceOnSquare(intCoords);
+        _selectedPiece = piece;
     }
 
     private void TryToTakeOpponentPiece(Vector2Int intCoords)
