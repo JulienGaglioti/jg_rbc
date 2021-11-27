@@ -57,7 +57,6 @@ public class ChessGameController : MonoBehaviour
     private void StartNewGame()
     {
         SetGameState(GameState.Init);
-        uiManager.HideEndGameScreen();
         board.SetDependencies(this);
         CreatePiecesFromLayout(startingBoardLayout);
         _activePlayer = _whitePlayer;
@@ -147,7 +146,6 @@ public class ChessGameController : MonoBehaviour
     private void EndGame()
     {
         SetGameState(GameState.Finished);
-        uiManager.OnGameFinished(_activePlayer.Team.ToString());
     }
 
     private void GenerateAllPossiblePlayerMoves(ChessPlayer player)
