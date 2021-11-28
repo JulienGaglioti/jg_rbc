@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(PieceCreator))]
-public class ChessGameController : MonoBehaviour
+public abstract class ChessGameController : MonoBehaviour
 {
-    private enum GameState
+    public enum GameState
     {
         Init, Play, Finished
     }
@@ -17,16 +17,20 @@ public class ChessGameController : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     
     private PieceCreator _pieceCreator;
-    private ChessPlayer _whitePlayer;
-    private ChessPlayer _blackPlayer;
-    private ChessPlayer _activePlayer;
-    private GameState _gameState;
+    protected ChessPlayer _whitePlayer;
+    protected ChessPlayer _blackPlayer;
+    protected ChessPlayer _activePlayer;
+    protected GameState _gameState;
 
     private void Awake()
     {
         SetDependencies();
         CreatePlayers();
     }
+
+    protected abstract void SetGameState(GameState state);
+    public abstract void TryToStartCurrentGame();
+    public abstract bool CanPerformMove();
 
     private void SetDependencies()
     {
@@ -36,11 +40,6 @@ public class ChessGameController : MonoBehaviour
     private void Start()
     {
         StartNewGame();
-    }
-
-    private void SetGameState(GameState state)
-    {
-        _gameState = state;
     }
 
     public bool IsGameInProgress()
@@ -61,7 +60,7 @@ public class ChessGameController : MonoBehaviour
         CreatePiecesFromLayout(startingBoardLayout);
         _activePlayer = _whitePlayer;
         GenerateAllPossiblePlayerMoves(_activePlayer);
-        SetGameState(GameState.Play);
+        TryToStartCurrentGame();
     }
 
     public void RestartGame()

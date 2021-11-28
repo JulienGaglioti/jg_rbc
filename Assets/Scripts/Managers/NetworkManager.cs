@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private UIManager uiManager;
+    private MultiPlayerController _multiPlayerController;
     
     private const string LEVEL = "level";
     private const string TEAM = "team";
@@ -34,6 +35,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private void Update()
     {
         uiManager.SetConnectionStatus(PhotonNetwork.NetworkClientState.ToString());
+    }
+
+    public void SetDependencies(MultiPlayerController controller)
+    {
+        _multiPlayerController = controller;
     }
 
     #region Callbacks
@@ -89,7 +95,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void SetPlayerTeam(int team)
     {
         PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable() { { TEAM, team } });
+        _multiPlayerController.SetLocalPlayer((TeamColor)team);
     }
 
     #endregion
+
+    public bool IsRoomFull()
+    {
+        return PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers;
+    }
 }

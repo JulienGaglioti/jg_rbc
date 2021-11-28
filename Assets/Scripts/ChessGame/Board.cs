@@ -16,7 +16,7 @@ public abstract class Board : MonoBehaviour
     private ChessGameController _chessController;
     private SquareSelectorCreator _squareSelectorCreator;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _squareSelectorCreator = GetComponent<SquareSelectorCreator>();
         CreateGrid();
@@ -42,7 +42,7 @@ public abstract class Board : MonoBehaviour
 
     public void OnSquareSelected(Vector3 inputPosition)
     {
-        if(!_chessController.IsGameInProgress())
+        if(!_chessController.CanPerformMove())
             return;
         
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
