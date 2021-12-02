@@ -28,8 +28,6 @@ public class ChessPlayer
             ActivePieces.Remove(piece);
     }
 
-    
-
     public void GenerateAllPossibleMoves()
     {
         foreach (var piece in ActivePieces)

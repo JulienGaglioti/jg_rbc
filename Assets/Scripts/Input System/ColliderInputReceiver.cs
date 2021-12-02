@@ -9,7 +9,6 @@ public class ColliderInputReceiver : InputReceiver
 
     private void Update()
     {
-        // TODO: layerMask on raycast in case I need to go through specific layers
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;

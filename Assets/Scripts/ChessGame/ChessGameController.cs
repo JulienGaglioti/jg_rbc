@@ -21,6 +21,7 @@ public abstract class ChessGameController : MonoBehaviour
     protected ChessPlayer _whitePlayer;
     protected ChessPlayer _blackPlayer;
     protected ChessPlayer _activePlayer;
+    [SerializeField] protected bool _hasSensed;
     protected GameState _gameState;
 
     private void Awake()
@@ -117,12 +118,14 @@ public abstract class ChessGameController : MonoBehaviour
         }
         else
         {
+            _hasSensed = false;
             ChangeActiveTeam();
         }
     }
 
     private bool CheckIfGameIsFinished()
     {
+        // Basically, returns true if it's Check Mate
         Piece[] piecesAttackingKing = _activePlayer.GetPiecesAttackingPieceOfType<King>();
         if (piecesAttackingKing.Length > 0)
         {
@@ -158,6 +161,17 @@ public abstract class ChessGameController : MonoBehaviour
     public bool IsTeamTurnActive(TeamColor team)
     {
         return (_activePlayer.Team == team);
+    }
+
+    public bool HasPlayerSensed()
+    {
+        return _hasSensed;
+    }
+
+    public void Sense()
+    {
+        // Debug.LogError("sensed");
+        _hasSensed = true;
     }
 
     private void ChangeActiveTeam()

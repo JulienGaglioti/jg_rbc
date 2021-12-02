@@ -13,6 +13,7 @@ public abstract class Board : MonoBehaviour
 
     private Piece[,] grid;
     private Piece _selectedPiece;
+    private Vector2Int _selectedSenseSquare;
     private ChessGameController _chessController;
     private SquareSelectorCreator _squareSelectorCreator;
 
@@ -49,12 +50,25 @@ public abstract class Board : MonoBehaviour
         Piece clickedPiece = GetPieceOnSquare(coords);
         
         // Debug.Log("coord: "+coords+", piece: "+clickedPiece);
-        
+
+        if (_chessController.HasPlayerSensed())
+        {
+            HandlePieceSelection(coords, clickedPiece);
+        }
+        else
+        {
+            HandleSenseSelection(coords);
+        }
+    }
+
+    private void HandlePieceSelection(Vector2Int coords, Piece clickedPiece)
+    {
         if (_selectedPiece)
         {
             if (clickedPiece != null && _selectedPiece == clickedPiece)
                 DeselectPiece();
-            else if (clickedPiece != null && _selectedPiece != clickedPiece && _chessController.IsTeamTurnActive(clickedPiece.Team))
+            else if (clickedPiece != null && _selectedPiece != clickedPiece &&
+                     _chessController.IsTeamTurnActive(clickedPiece.Team))
                 SelectPiece(coords);
             else if (_selectedPiece.CanMoveTo(coords))
                 SelectedPieceMoved(coords);
@@ -66,6 +80,46 @@ public abstract class Board : MonoBehaviour
                 SelectPiece(coords);
             }
         }
+    }
+
+    private void HandleSenseSelection(Vector2Int coords)
+    {
+        if (CheckIfCoordinatesAreOnBoard(coords))
+        {
+            if (_selectedSenseSquare == coords)
+            {
+                _chessController.Sense();
+                _selectedSenseSquare = new Vector2Int(-300, -300);
+                _squareSelectorCreator.ClearSelection();
+            }
+            else
+            {
+                _selectedSenseSquare = coords;
+                ShowSenseIndicator();
+            }
+        }
+        else
+        {
+            _selectedSenseSquare = new Vector2Int(-300, -300);
+            _squareSelectorCreator.ClearSelection();
+        }
+    }
+
+    private void ShowSenseIndicator()
+    {
+        _squareSelectorCreator.ClearSelection();
+        
+        Dictionary<Vector3, bool> squaresData = new Dictionary<Vector3, bool>();
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                Vector3 position = CalculatePositionFromCoords(_selectedSenseSquare+new Vector2Int(i, j));
+                squaresData.Add(position, true);
+            }
+        }
+        
+        _squareSelectorCreator.ShowSelection(squaresData);
     }
 
     private void SelectPiece(Vector2Int coords)
@@ -141,7 +195,9 @@ public abstract class Board : MonoBehaviour
     public Piece GetPieceOnSquare(Vector2Int coords)
     {
         if (CheckIfCoordinatesAreOnBoard(coords))
+        {
             return grid[coords.x, coords.y];
+        }
         return null;
     }
 
