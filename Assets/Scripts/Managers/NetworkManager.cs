@@ -72,7 +72,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.LogError($"Player {newPlayer.ActorNumber} entered the room.");
+        //Debug.LogError($"Player {newPlayer.ActorNumber} entered the room.");
     }
 
     public void SetPlayerLevel(ChessLevel level)
@@ -100,6 +100,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         gameInitializer.InitializeMultiplayerController();
         _multiPlayerController.SetLocalPlayer((TeamColor)team);
         _multiPlayerController.StartNewGame();
+        _multiPlayerController.SetupCamera((TeamColor)team);
     }
 
     #endregion

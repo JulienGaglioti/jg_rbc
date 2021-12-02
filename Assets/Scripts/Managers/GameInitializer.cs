@@ -14,6 +14,7 @@ public class GameInitializer : MonoBehaviour
     [Header("Scene references")] 
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private CameraSetup cameraSetup;
 
     public void CreateMultiPlayerBoard()
     {
@@ -33,7 +34,7 @@ public class GameInitializer : MonoBehaviour
         MultiPlayerBoard board = FindObjectOfType<MultiPlayerBoard>();
         MultiPlayerController controller = Instantiate(mpControllerPrefab);
         
-        controller.SetDependencies(uiManager, board);
+        controller.SetDependencies(uiManager, board, cameraSetup);
         controller.CreatePlayers();
         controller.SetNetworkManager(networkManager);
         
@@ -46,7 +47,7 @@ public class GameInitializer : MonoBehaviour
         SinglePlayerBoard board = FindObjectOfType<SinglePlayerBoard>();
         SinglePlayerController controller = Instantiate(spControllerPrefab);
         
-        controller.SetDependencies(uiManager, board);
+        controller.SetDependencies(uiManager, board, cameraSetup);
         controller.CreatePlayers();
         board.SetDependencies(controller);
         controller.StartNewGame();

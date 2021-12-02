@@ -15,6 +15,7 @@ public abstract class ChessGameController : MonoBehaviour
     [SerializeField] private BoardLayout startingBoardLayout;
     private Board _board;
     private UIManager _uiManager;
+    private CameraSetup _cameraSetup;
     
     private PieceCreator _pieceCreator;
     protected ChessPlayer _whitePlayer;
@@ -31,10 +32,11 @@ public abstract class ChessGameController : MonoBehaviour
     public abstract void TryToStartCurrentGame();
     public abstract bool CanPerformMove();
 
-    public void SetDependencies(UIManager uiManager, Board board)
+    public void SetDependencies(UIManager uiManager, Board board, CameraSetup cameraSetup)
     {
         _uiManager = uiManager;
         _board = board;
+        _cameraSetup = cameraSetup;
     }
 
     public bool IsGameInProgress()
@@ -56,6 +58,11 @@ public abstract class ChessGameController : MonoBehaviour
         _activePlayer = _whitePlayer;
         GenerateAllPossiblePlayerMoves(_activePlayer);
         TryToStartCurrentGame();
+    }
+
+    public void SetupCamera(TeamColor color)
+    {
+        _cameraSetup.SetupCamera(color);
     }
 
     public void RestartGame()
