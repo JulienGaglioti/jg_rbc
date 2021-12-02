@@ -39,6 +39,12 @@ public class UIManager : MonoBehaviour
         gameModeSelectionScreen.SetActive(true);
     }
 
+    public void OnChessGameStarted()
+    {
+        DisableAllScreens();
+        connectionStatusText.gameObject.SetActive(false);
+    }
+
     public void OnSinglePlayerModeSelected()
     {
         DisableAllScreens();
@@ -65,7 +71,7 @@ public class UIManager : MonoBehaviour
 
     public void SelectTeam(int team)
     {
-        Debug.LogError($"Selected Team {team}");
+        //Debug.LogError($"Selected Team {team}");
         networkManager.SetPlayerTeam(team);
     }
 
@@ -86,5 +92,12 @@ public class UIManager : MonoBehaviour
     {
         Button buttonToDeactivate = occupiedTeam == TeamColor.White ? whiteTeamButton : blackTeamButton;
         buttonToDeactivate.interactable = false;
+    }
+
+
+    public void OnChessGameFinished(string winner)
+    {
+        gameOverScreen.SetActive(true);
+        resultText.SetText(winner + " won");
     }
 }

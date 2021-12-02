@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameInitializer gameInitializer;
     private MultiPlayerController _multiPlayerController;
     
     private const string LEVEL = "level";
@@ -46,13 +47,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        Debug.LogError("Connected to Server. Looking for random room.");
+        //Debug.LogError("Connected to Server. Looking for random room.");
         PhotonNetwork.JoinRandomRoom(new ExitGames.Client.Photon.Hashtable() { { LEVEL, playerLevel } }, MAX_PLAYERS);
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        Debug.LogError($"Join failed because of {message}. Creating a new one.");
+        //Debug.LogError($"Join failed because of {message}. Creating a new one.");
         PhotonNetwork.CreateRoom(null, new RoomOptions
         {
             CustomRoomPropertiesForLobby = new string[] { LEVEL },
@@ -63,7 +64,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.LogError($"Player {PhotonNetwork.LocalPlayer.ActorNumber} joined the room.");
+        //Debug.LogError($"Player {PhotonNetwork.LocalPlayer.ActorNumber} joined the room.");
+        gameInitializer.CreateMultiPlayerBoard();
         PrepareTeamSelectionOptions();
         uiManager.ShowTeamSelectionScreen();
     }
@@ -95,7 +97,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void SetPlayerTeam(int team)
     {
         PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable() { { TEAM, team } });
+        gameInitializer.InitializeMultiplayerController();
         _multiPlayerController.SetLocalPlayer((TeamColor)team);
+        _multiPlayerController.StartNewGame();
     }
 
     #endregion

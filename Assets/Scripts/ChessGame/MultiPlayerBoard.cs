@@ -22,7 +22,7 @@ public class MultiPlayerBoard : Board
     [PunRPC]
     private void RPC_OnSelectedPieceMoved(Vector2 coords)
     {
-        Debug.LogError("RPC - On Move");
+        //Debug.LogError("RPC - On Move");
 
         Vector2Int intCoords = new Vector2Int(Mathf.RoundToInt(coords.x), Mathf.RoundToInt(coords.y));
         OnSelectedPieceMoved(intCoords);
@@ -36,7 +36,7 @@ public class MultiPlayerBoard : Board
     [PunRPC]
     private void RPC_SetSelectedPiece(Vector2 coords)
     {
-        Debug.LogError("RPC - On Select");
+        //Debug.LogError("RPC - On Select");
 
         Vector2Int intCoords = new Vector2Int(Mathf.RoundToInt(coords.x), Mathf.RoundToInt(coords.y));
         OnSetSelectedPiece(intCoords);

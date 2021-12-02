@@ -13,8 +13,8 @@ public abstract class ChessGameController : MonoBehaviour
     }
     
     [SerializeField] private BoardLayout startingBoardLayout;
-    [SerializeField] private Board board;
-    [SerializeField] private UIManager uiManager;
+    private Board _board;
+    private UIManager _uiManager;
     
     private PieceCreator _pieceCreator;
     protected ChessPlayer _whitePlayer;
@@ -24,22 +24,17 @@ public abstract class ChessGameController : MonoBehaviour
 
     private void Awake()
     {
-        SetDependencies();
-        CreatePlayers();
+        _pieceCreator = GetComponent<PieceCreator>();
     }
 
     protected abstract void SetGameState(GameState state);
     public abstract void TryToStartCurrentGame();
     public abstract bool CanPerformMove();
 
-    private void SetDependencies()
+    public void SetDependencies(UIManager uiManager, Board board)
     {
-        _pieceCreator = GetComponent<PieceCreator>();
-    }
-    
-    private void Start()
-    {
-        StartNewGame();
+        _uiManager = uiManager;
+        _board = board;
     }
 
     public bool IsGameInProgress()
@@ -47,16 +42,16 @@ public abstract class ChessGameController : MonoBehaviour
         return _gameState == GameState.Play;
     }
 
-    private void CreatePlayers()
+    public void CreatePlayers()
     {
-        _whitePlayer = new ChessPlayer(TeamColor.White, board);
-        _blackPlayer = new ChessPlayer(TeamColor.Black, board);
+        _whitePlayer = new ChessPlayer(TeamColor.White, _board);
+        _blackPlayer = new ChessPlayer(TeamColor.Black, _board);
     }
 
-    private void StartNewGame()
+    public void StartNewGame()
     {
+        _uiManager.OnChessGameStarted();
         SetGameState(GameState.Init);
-        board.SetDependencies(this);
         CreatePiecesFromLayout(startingBoardLayout);
         _activePlayer = _whitePlayer;
         GenerateAllPossiblePlayerMoves(_activePlayer);
@@ -66,7 +61,7 @@ public abstract class ChessGameController : MonoBehaviour
     public void RestartGame()
     {
         DestroyAllPieces();
-        board.OnGameRestarted();
+        _board.OnGameRestarted();
         _whitePlayer.OnGameRestarted();
         _blackPlayer.OnGameRestarted();
         StartNewGame();
@@ -94,12 +89,12 @@ public abstract class ChessGameController : MonoBehaviour
     private void CreatePieceAndInitialize(Vector2Int squareCoords, TeamColor team, Type type)
     {
         Piece newPiece = _pieceCreator.CreatePiece(type).GetComponent<Piece>();
-        newPiece.SetData(squareCoords, team, board);
+        newPiece.SetData(squareCoords, team, _board);
 
         Material teamMaterial = _pieceCreator.GetTeamMaterial(team);
         newPiece.SetMaterial(teamMaterial);
 
-        board.SetPieceOnBoard(squareCoords, newPiece);
+        _board.SetPieceOnBoard(squareCoords, newPiece);
 
         ChessPlayer currentPlayer = team == TeamColor.White ? _whitePlayer : _blackPlayer;
         currentPlayer.AddPiece(newPiece);
@@ -144,6 +139,7 @@ public abstract class ChessGameController : MonoBehaviour
 
     private void EndGame()
     {
+        _uiManager.OnChessGameFinished(_activePlayer.Team.ToString());
         SetGameState(GameState.Finished);
     }
 
