@@ -99,8 +99,7 @@ public abstract class ChessGameController : MonoBehaviour
         Piece newPiece = _pieceCreator.CreatePiece(type).GetComponent<Piece>();
         newPiece.SetData(squareCoords, team, _board);
 
-        Material teamMaterial = _pieceCreator.GetTeamMaterial(team);
-        newPiece.SetMaterial(teamMaterial);
+        newPiece.SetTeamColor(team);
 
         _board.SetPieceOnBoard(squareCoords, newPiece);
 
@@ -179,7 +178,7 @@ public abstract class ChessGameController : MonoBehaviour
         _activePlayer = _activePlayer == _whitePlayer ? _blackPlayer : _whitePlayer;
     }
 
-    private ChessPlayer GetOpponentToPlayer(ChessPlayer player)
+    protected ChessPlayer GetOpponentToPlayer(ChessPlayer player)
     {
         return player == _whitePlayer ? _blackPlayer : _whitePlayer;
     }

@@ -41,6 +41,14 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
         }
     }
 
+    public void MakeEnemyPiecesInvisible()
+    {
+        foreach (var piece in GetOpponentToPlayer(_localPlayer).ActivePieces)
+        {
+            piece.MakeInvisible();
+        }
+    }
+
     public override bool CanPerformMove()
     {
         if (!IsGameInProgress() || !IsLocalPlayersTurn())

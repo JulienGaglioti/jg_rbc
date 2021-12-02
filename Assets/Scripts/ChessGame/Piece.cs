@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MaterialSetter))]
+
 [RequireComponent(typeof(IObjectTweener))]
 public abstract class Piece : MonoBehaviour
 {
-    [SerializeField] private MaterialSetter materialSetter;
+    private TeamColorSetter teamColorSetter;
     public Board ChessBoard { protected get; set; }
     public Vector2Int OccupiedSquare { get; set; }
     public TeamColor Team { get; set; }
@@ -21,13 +21,22 @@ public abstract class Piece : MonoBehaviour
     {
         availableMoves = new List<Vector2Int>();
         tweener = GetComponent<IObjectTweener>();
-        materialSetter = GetComponent<MaterialSetter>();
+        teamColorSetter = GetComponent<TeamColorSetter>();
         HasMoved = false;
     }
 
-    public void SetMaterial(Material selectedMaterial)
+    public void SetTeamColor(TeamColor color)
     {
-        materialSetter.SetSingleMaterial(selectedMaterial);
+        teamColorSetter.SetColor(color);
+    }
+
+    public void MakeInvisible()
+    {
+        //GetComponent<MeshRenderer>().enabled = false;
+        
+        // TODO: a better way to do this
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
     }
 
     public bool IsFromSameTeam(Piece piece)

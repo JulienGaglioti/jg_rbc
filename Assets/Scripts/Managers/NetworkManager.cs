@@ -100,6 +100,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         gameInitializer.InitializeMultiplayerController();
         _multiPlayerController.SetLocalPlayer((TeamColor)team);
         _multiPlayerController.StartNewGame();
+        _multiPlayerController.MakeEnemyPiecesInvisible();
         _multiPlayerController.SetupCamera((TeamColor)team);
     }
 

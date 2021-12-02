@@ -45,15 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piecesPrefabs:
-  - {fileID: 1672242659374470, guid: f005021ceced8b240983e71a3d481180, type: 3}
-  - {fileID: 1810274083847610, guid: 309659d4eb727d74d91c4875a85edc00, type: 3}
-  - {fileID: 1179637952412708, guid: a007978aa14da3945b0f6655f65cc278, type: 3}
-  - {fileID: 1867195236767680, guid: b1d95c04dd54e434aa65855a0f77d30f, type: 3}
-  - {fileID: 1471985601831630, guid: 664a4dc6e997f5f47a9233db911328ac, type: 3}
-  - {fileID: 1211746330687442, guid: a72c2cd1520039b4084a4a33dfeccf7e, type: 3}
+  - {fileID: 3650176052895468171, guid: 6f0184e3714358841aec35f5c659afb4, type: 3}
+  - {fileID: 2959927078929415938, guid: 0453449fd9f3e5d46a6f3138aa6e65cb, type: 3}
+  - {fileID: 8662135057204926920, guid: 647b644e122191448ae0c965af71faae, type: 3}
+  - {fileID: 4399415698595310940, guid: 8d8ad6fad6bb3bc41abc920eceb54705, type: 3}
+  - {fileID: 2861330406237857854, guid: b2458a6457179c84b90c3084c01e277a, type: 3}
+  - {fileID: 2855602287835348308, guid: e543aaca89decf94780f737c4dde52aa, type: 3}
   blackMaterial: {fileID: 2100000, guid: 7ed2f4498f2dbcb4489b0ae67b019103, type: 2}
   whiteMaterial: {fileID: 2100000, guid: 23b0b1c3fe6a089459558bb976ae8d38, type: 2}
-  piecesParentTransform: {fileID: 0}
 --- !u!114 &4760166786880744400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,5 +66,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBoardLayout: {fileID: 11400000, guid: 1b6cd4e1dc5ed7b4b86960ca9f1f3491, type: 2}
-  board: {fileID: 0}
-  uiManager: {fileID: 0}
+  _hasSensed: 0

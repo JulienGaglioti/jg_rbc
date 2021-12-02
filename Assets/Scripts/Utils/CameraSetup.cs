@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraSetup : MonoBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    private Camera mainCamera;
+
+    private void Awake()
+    {
+        mainCamera = GetComponent<Camera>();
+    }
 
     public void SetupCamera(TeamColor team)
     {
@@ -12,6 +18,7 @@ public class CameraSetup : MonoBehaviour
         {
             FlipCamera();
         }
+        GetComponent<CameraSwitch>().Initialize();
     }
 
     private void FlipCamera()
