@@ -10,6 +10,7 @@ public class TeamColorSetter : MonoBehaviour
     public Sprite whiteSprite;
     public MaterialSetter meshMaterialSetter;
     public SpriteRenderer spriteRenderer;
+    public MeshRenderer meshRenderer;
     
     public void SetColor(TeamColor color)
     {
@@ -39,5 +40,11 @@ public class TeamColorSetter : MonoBehaviour
         {
             spriteRenderer.sprite = whiteSprite;
         }
+    }
+
+    public void MakeInvisible()
+    {
+        meshRenderer.enabled = false;
+        spriteRenderer.enabled = false;
     }
 }

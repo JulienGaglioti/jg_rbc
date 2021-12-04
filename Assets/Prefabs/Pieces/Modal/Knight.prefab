@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4137245882991228434
 Transform:
   m_ObjectHideFlags: 0
@@ -188,6 +188,8 @@ GameObject:
   - component: {fileID: 3681683147598323855}
   - component: {fileID: 6183787462326406735}
   - component: {fileID: 7230530298891370615}
+  - component: {fileID: -1882783914394926003}
+  - component: {fileID: 1083099593032130711}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -254,3 +256,46 @@ MonoBehaviour:
   whiteSprite: {fileID: 21300000, guid: 3c7705a0b69746b46989de6255c604ff, type: 3}
   meshMaterialSetter: {fileID: 1354608583190352901}
   spriteRenderer: {fileID: 6272367236312253630}
+  meshRenderer: {fileID: 557830097187168218}
+--- !u!114 &-1882783914394926003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662135057204926920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2b3abfae2d6294a9d08365de435e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject3d: {fileID: 571097657412579932}
+  gameObject2d: {fileID: 111008277852167649}
+--- !u!114 &1083099593032130711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662135057204926920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: adef3299cc9390041b25d663cc2bbe97, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1882783914394926003}
+        m_TargetAssemblyTypeName: PieceModeSwitch, Assembly-CSharp
+        m_MethodName: SwitchMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

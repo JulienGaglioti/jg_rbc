@@ -34,7 +34,7 @@ public class CameraSwitch : MonoBehaviour
         {
             is2d = true;
             mainCamera.transform.position = new Vector3(0, 18, 0);
-            mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
+            mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, originalRotation.y, 0));
             mainCamera.orthographic = true;
         }
     }

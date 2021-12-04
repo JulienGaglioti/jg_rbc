@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 2238568714351015255}
   - component: {fileID: 1219052022659971803}
   - component: {fileID: 2405986852344050915}
+  - component: {fileID: 6243659450108461161}
+  - component: {fileID: 7904948839269452971}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -172,6 +174,49 @@ MonoBehaviour:
   whiteSprite: {fileID: 21300000, guid: a9d06b5977918c8449f533ee56e8510e, type: 3}
   meshMaterialSetter: {fileID: 7765750991043875312}
   spriteRenderer: {fileID: 1310587558678523946}
+  meshRenderer: {fileID: 3426717130809733657}
+--- !u!114 &6243659450108461161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399415698595310940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2b3abfae2d6294a9d08365de435e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject3d: {fileID: 3448134031894795351}
+  gameObject2d: {fileID: 4949924128219277685}
+--- !u!114 &7904948839269452971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399415698595310940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: adef3299cc9390041b25d663cc2bbe97, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6243659450108461161}
+        m_TargetAssemblyTypeName: PieceModeSwitch, Assembly-CSharp
+        m_MethodName: SwitchMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4949924128219277685
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8958147300350689926
 Transform:
   m_ObjectHideFlags: 0

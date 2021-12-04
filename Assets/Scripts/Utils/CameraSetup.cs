@@ -19,6 +19,8 @@ public class CameraSetup : MonoBehaviour
             FlipCamera();
         }
         GetComponent<CameraSwitch>().Initialize();
+        
+         // after I flip the camera and every time I create a piece, its Y rotation must be set to the Z rotation of the main camera
     }
 
     private void FlipCamera()

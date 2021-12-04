@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 8991009822082723526}
   - component: {fileID: 2256070145101946124}
   - component: {fileID: 3370402022985438004}
+  - component: {fileID: 4853709493734165625}
+  - component: {fileID: 9100919037434073902}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -172,6 +174,49 @@ MonoBehaviour:
   whiteSprite: {fileID: 21300000, guid: 68bff705a07501e459a5cf936bd470ca, type: 3}
   meshMaterialSetter: {fileID: 942645821405035366}
   spriteRenderer: {fileID: 2131890321689171965}
+  meshRenderer: {fileID: 3157997084004748737}
+--- !u!114 &4853709493734165625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650176052895468171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2b3abfae2d6294a9d08365de435e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject3d: {fileID: 3136029654061356359}
+  gameObject2d: {fileID: 5410075804813037218}
+--- !u!114 &9100919037434073902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650176052895468171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: adef3299cc9390041b25d663cc2bbe97, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4853709493734165625}
+        m_TargetAssemblyTypeName: PieceModeSwitch, Assembly-CSharp
+        m_MethodName: SwitchMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5410075804813037218
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8355409874014905681
 Transform:
   m_ObjectHideFlags: 0

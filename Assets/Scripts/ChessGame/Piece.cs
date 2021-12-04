@@ -34,9 +34,7 @@ public abstract class Piece : MonoBehaviour
     {
         //GetComponent<MeshRenderer>().enabled = false;
         
-        // TODO: a better way to do this
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(false);
+        teamColorSetter.MakeInvisible();
     }
 
     public bool IsFromSameTeam(Piece piece)
