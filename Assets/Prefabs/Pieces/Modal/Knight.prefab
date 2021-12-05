@@ -252,8 +252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackMaterial: {fileID: 2100000, guid: 7ed2f4498f2dbcb4489b0ae67b019103, type: 2}
   whiteMaterial: {fileID: 2100000, guid: 23b0b1c3fe6a089459558bb976ae8d38, type: 2}
+  senseMaterial: {fileID: 2100000, guid: 21bdd8f4781758c4ebc60fb1492addce, type: 2}
   blackSprite: {fileID: 21300000, guid: ddeedff8e43d5be4b81fa24d36b0e018, type: 3}
   whiteSprite: {fileID: 21300000, guid: 3c7705a0b69746b46989de6255c604ff, type: 3}
+  senseSprite: {fileID: 21300000, guid: f00b00f1cc7be134481029b7a16aac76, type: 3}
   meshMaterialSetter: {fileID: 1354608583190352901}
   spriteRenderer: {fileID: 6272367236312253630}
   meshRenderer: {fileID: 557830097187168218}

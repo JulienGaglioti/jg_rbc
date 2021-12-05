@@ -21,11 +21,6 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    public void SetNetworkManager(NetworkManager networkManager)
-    {
-        _networkManager = networkManager;
-    }
-
     protected override void SetGameState(GameState state)
     {
         object[] content = new object[] { (int)state };
@@ -41,22 +36,27 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
         }
     }
 
-    public void MakeEnemyPiecesInvisible()
-    {
-        foreach (var piece in GetOpponentToPlayer(_localPlayer).ActivePieces)
-        {
-            piece.MakeInvisible();
-        }
-    }
-
     public override bool CanPerformMove()
     {
         if (!IsGameInProgress() || !IsLocalPlayersTurn())
         {
             return false;
         }
-            
+
         return true;
+    }
+
+    public void SetNetworkManager(NetworkManager networkManager)
+    {
+        _networkManager = networkManager;
+    }
+
+    public void MakeEnemyPiecesInvisible()
+    {
+        foreach (var piece in GetOpponentToPlayer(_localPlayer).ActivePieces)
+        {
+            piece.MakeInvisible();
+        }
     }
 
     public bool IsLocalPlayersTurn()
@@ -71,6 +71,7 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
 
     public void OnEvent(EventData photonEvent)
     {
+        // response to event used to change state
         byte eventCode = photonEvent.Code;
         if (eventCode == SET_GAME_STATE_EVENT_CODE)
         {

@@ -27,7 +27,7 @@ public abstract class Piece : MonoBehaviour
 
     public void SetTeamColor(TeamColor color)
     {
-        teamColorSetter.SetColor(color);
+        teamColorSetter.SetColorByTeam(color);
     }
 
     public void MakeInvisible()

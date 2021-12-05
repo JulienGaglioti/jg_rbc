@@ -111,7 +111,7 @@ public abstract class ChessGameController : MonoBehaviour
     {
         GenerateAllPossiblePlayerMoves(_activePlayer);
         GenerateAllPossiblePlayerMoves(GetOpponentToPlayer(_activePlayer));
-        if (CheckIfGameIsFinished())
+        if (IsKingDead())
         {
             EndGame();
         }
@@ -122,7 +122,20 @@ public abstract class ChessGameController : MonoBehaviour
         }
     }
 
-    private bool CheckIfGameIsFinished()
+    private bool IsKingDead()
+    {
+        ChessPlayer opponent = GetOpponentToPlayer(_activePlayer);
+        if (opponent.GetPiecesOfType<King>().Length == 0)
+        {
+            print($"{_activePlayer} won");
+            return true;
+        }
+        
+        return false;
+
+    }
+
+    private bool IsCheckMate()
     {
         // Basically, returns true if it's Check Mate
         Piece[] piecesAttackingKing = _activePlayer.GetPiecesAttackingPieceOfType<King>();
@@ -169,7 +182,6 @@ public abstract class ChessGameController : MonoBehaviour
 
     public void Sense()
     {
-        // Debug.LogError("sensed");
         _hasSensed = true;
     }
 

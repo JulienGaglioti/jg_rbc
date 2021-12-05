@@ -13,6 +13,7 @@ public class GameInitializer : MonoBehaviour
 
     [Header("Scene references")] 
     [SerializeField] private NetworkManager networkManager;
+    [SerializeField] private SenseManager senseManager;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private CameraSetup cameraSetup;
 
@@ -39,7 +40,8 @@ public class GameInitializer : MonoBehaviour
         controller.SetNetworkManager(networkManager);
         
         networkManager.SetDependencies(controller);
-        board.SetDependencies(controller);
+        senseManager.SetDependencies(board, controller);
+        board.SetDependencies(controller, senseManager);
     }
 
     public void InitializeSinglePlayerController()
@@ -49,7 +51,8 @@ public class GameInitializer : MonoBehaviour
         
         controller.SetDependencies(uiManager, board, cameraSetup);
         controller.CreatePlayers();
-        board.SetDependencies(controller);
+        board.SetDependencies(controller, senseManager);
+        senseManager.SetDependencies(board, controller);
         controller.StartNewGame();
     }
 }

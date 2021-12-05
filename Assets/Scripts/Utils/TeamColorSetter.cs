@@ -6,21 +6,23 @@ public class TeamColorSetter : MonoBehaviour
 {
     public Material blackMaterial;
     public Material whiteMaterial;
+    public Material senseMaterial;
     public Sprite blackSprite;
     public Sprite whiteSprite;
+    public Sprite senseSprite;
     public MaterialSetter meshMaterialSetter;
     public SpriteRenderer spriteRenderer;
     public MeshRenderer meshRenderer;
     
-    public void SetColor(TeamColor color)
+    public void SetColorByTeam(TeamColor teamColor)
     {
-        SetMeshMaterial(color);
-        SetSprite(color);
+        SetMeshMaterial(teamColor);
+        SetSprite(teamColor);
     }
 
-    private void SetMeshMaterial(TeamColor color)
+    private void SetMeshMaterial(TeamColor teamColor)
     {
-        if (color == TeamColor.Black)
+        if (teamColor == TeamColor.Black)
         {
             meshMaterialSetter.SetSingleMaterial(blackMaterial);
         }
@@ -30,9 +32,9 @@ public class TeamColorSetter : MonoBehaviour
         }
     }
 
-    private void SetSprite(TeamColor color)
+    private void SetSprite(TeamColor teamColor)
     {
-        if (color == TeamColor.Black)
+        if (teamColor == TeamColor.Black)
         {
             spriteRenderer.sprite = blackSprite;
         }
@@ -46,5 +48,11 @@ public class TeamColorSetter : MonoBehaviour
     {
         meshRenderer.enabled = false;
         spriteRenderer.enabled = false;
+    }
+
+    public void MakeSensePiece()
+    {
+        meshMaterialSetter.SetSingleMaterial(senseMaterial);
+        spriteRenderer.sprite = senseSprite;
     }
 }

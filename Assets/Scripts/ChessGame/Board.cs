@@ -15,6 +15,7 @@ public abstract class Board : MonoBehaviour
     private Piece _selectedPiece;
     private Vector2Int _selectedSenseSquare;
     private ChessGameController _chessController;
+    private SenseManager _senseManager;
     private SquareSelectorCreator _squareSelectorCreator;
 
     protected virtual void Awake()
@@ -26,9 +27,10 @@ public abstract class Board : MonoBehaviour
     public abstract void SelectedPieceMoved(Vector2 coords);
     public abstract void SetSelectedPiece(Vector2 coords);
 
-    public void SetDependencies(ChessGameController chessController)
+    public void SetDependencies(ChessGameController chessController, SenseManager senseManager)
     {
         _chessController = chessController;
+        _senseManager = senseManager;
     }
 
     private void CreateGrid()
@@ -88,8 +90,8 @@ public abstract class Board : MonoBehaviour
         {
             if (_selectedSenseSquare == coords)
             {
-                _chessController.Sense();
-                _selectedSenseSquare = new Vector2Int(-300, -300);
+                _senseManager.SenseSquare(coords);
+                _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
                 _squareSelectorCreator.ClearSelection();
             }
             else
@@ -100,7 +102,7 @@ public abstract class Board : MonoBehaviour
         }
         else
         {
-            _selectedSenseSquare = new Vector2Int(-300, -300);
+            _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
             _squareSelectorCreator.ClearSelection();
         }
     }
@@ -125,7 +127,7 @@ public abstract class Board : MonoBehaviour
     private void SelectPiece(Vector2Int coords)
     {
         Piece piece = GetPieceOnSquare(coords);
-        _chessController.RemoveMovesEnablingAttackOnPieceOfType<King>(piece);
+        //_chessController.RemoveMovesEnablingAttackOnPieceOfType<King>(piece);
         SetSelectedPiece(coords);
         List<Vector2Int> indicatorSquares = _selectedPiece.availableMoves;
         ShowIndicatorSquares(indicatorSquares);
