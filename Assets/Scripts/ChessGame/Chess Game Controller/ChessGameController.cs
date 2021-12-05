@@ -21,6 +21,7 @@ public abstract class ChessGameController : MonoBehaviour
     protected ChessPlayer _whitePlayer;
     protected ChessPlayer _blackPlayer;
     protected ChessPlayer _activePlayer;
+    protected ChessPlayer _localPlayer;
     [SerializeField] protected bool _hasSensed;
     protected GameState _gameState;
 
@@ -193,6 +194,11 @@ public abstract class ChessGameController : MonoBehaviour
     protected ChessPlayer GetOpponentToPlayer(ChessPlayer player)
     {
         return player == _whitePlayer ? _blackPlayer : _whitePlayer;
+    }
+
+    public ChessPlayer GetLocalPlayer()
+    {
+        return _localPlayer;
     }
 
     internal void RemoveMovesEnablingAttackOnPieceOfType<T>(Piece piece) where T : Piece

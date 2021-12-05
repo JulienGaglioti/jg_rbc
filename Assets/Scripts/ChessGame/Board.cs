@@ -90,7 +90,7 @@ public abstract class Board : MonoBehaviour
         {
             if (_selectedSenseSquare == coords)
             {
-                _senseManager.SenseSquare(coords);
+                _senseManager.OnSenseSquare(coords);
                 _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
                 _squareSelectorCreator.ClearSelection();
             }

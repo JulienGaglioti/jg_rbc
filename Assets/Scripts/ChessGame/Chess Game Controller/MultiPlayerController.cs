@@ -10,7 +10,7 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
 {
     protected const byte SET_GAME_STATE_EVENT_CODE = 1;
     private NetworkManager _networkManager;
-    private ChessPlayer _localPlayer;
+    
     private void OnEnable()
     {
         PhotonNetwork.AddCallbackTarget(this);

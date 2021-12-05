@@ -14,6 +14,8 @@ public class PieceCreator : MonoBehaviour
     private void Awake()
     {
         _piecesParentTransform = FindObjectOfType<PiecesParent>().transform;
+        
+        
         foreach (var piece in piecesPrefabs)
         {
             _nameToPieceDict.Add(piece.GetComponent<Piece>().GetType().ToString(), piece);

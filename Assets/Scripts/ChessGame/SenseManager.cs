@@ -9,7 +9,7 @@ public class SenseManager : MonoBehaviour
     private PieceCreator pieceCreator;
     private ChessGameController _chessGameController;
     private Board _board;
-    private Piece[,] senseMatrix = new Piece[8, 8];
+    private GameObject[,] senseMatrix = new GameObject[8, 8];
 
     public void SetDependencies(Board board, ChessGameController controller)
     {
@@ -18,10 +18,61 @@ public class SenseManager : MonoBehaviour
         pieceCreator = _chessGameController.GetComponent<PieceCreator>();
     }
 
-    public void SenseSquare(Vector2Int coords)
+    public void OnSenseSquare(Vector2Int coords)
     {
         _chessGameController.Sense();
-        pieceCreator.CreatePiece(typeof(King)).GetComponent<TeamColorSetter>().MakeSensePiece();
+
+        List<Vector2Int> coordinatesToSense = new List<Vector2Int>();
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                Vector2Int coordsPlusOffset = coords + new Vector2Int(i, j);
+                if (_board.CheckIfCoordinatesAreOnBoard(coordsPlusOffset))
+                {
+                    coordinatesToSense.Add(coordsPlusOffset);
+                }
+            }
+        }
+
+        foreach (var square in coordinatesToSense)
+        {
+            CheckForOpponentPiece(square);
+        }
+        
+    }
+
+    private void CheckForOpponentPiece(Vector2Int coords)
+    {
+        Piece pieceOnSquare = _board.GetPieceOnSquare(coords);
+        
+        if(!pieceOnSquare)
+            return;
+        
+        if (pieceOnSquare.Team != _chessGameController.GetLocalPlayer().Team)
+        {
+            CreateSensePiece(coords, pieceOnSquare);
+        }
+    }
+
+    private void CreateSensePiece(Vector2Int coords, Piece pieceToCreate)
+    {
+        DestroySensePiece(coords);
+        GameObject sensePiece = pieceCreator.CreatePiece(pieceToCreate.GetType());
+        
+        sensePiece.transform.position = _board.CalculatePositionFromCoords(coords);
+        sensePiece.GetComponent<TeamColorSetter>().MakeSensePiece();
+        senseMatrix[coords.x, coords.y] = sensePiece;
+    }
+
+    private void DestroySensePiece(Vector2Int coords)
+    {
+        if (senseMatrix[coords.x, coords.y])
+        {
+            Destroy(senseMatrix[coords.x, coords.y]);
+        }
+
+        senseMatrix[coords.x, coords.y] = null;
     }
 
 }
