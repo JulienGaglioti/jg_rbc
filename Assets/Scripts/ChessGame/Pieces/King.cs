@@ -31,4 +31,9 @@ public class King : Piece
 
         return availableMoves;
     }
+
+    public override Vector2Int AttemptMove(Vector2Int coords)
+    {
+        return coords;
+    }
 }

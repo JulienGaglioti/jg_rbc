@@ -25,9 +25,28 @@ public abstract class Piece : MonoBehaviour
         HasMoved = false;
     }
 
+    public abstract Vector2Int AttemptMove(Vector2Int coords);
+
     public void SetTeamColor(TeamColor color)
     {
         teamColorSetter.SetColorByTeam(color);
+    }
+
+    protected Vector2Int GetNormalizedDirection(Vector2Int direction)
+    {
+        int x = direction.x;
+        int y = direction.y;
+        
+        if (x != 0)
+        {
+            x = x / Mathf.Abs(x);
+        }
+        if (y != 0)
+        {
+            y = y / Mathf.Abs(y);
+        }
+
+        return new Vector2Int(x, y);
     }
 
     public void MakeInvisible()

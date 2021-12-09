@@ -75,7 +75,7 @@ public abstract class Board : MonoBehaviour
             {
                 if (_selectedPiece.CanMoveTo(coords))
                 {
-                    SelectedPieceMoved(coords);
+                    AttemptMovement(coords);
                 }
                 else
                 {
@@ -114,6 +114,12 @@ public abstract class Board : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void AttemptMovement(Vector2Int coords)
+    {
+        Vector2Int realCoords = _selectedPiece.AttemptMove(coords);
+        SelectedPieceMoved(realCoords);
     }
 
     public abstract void SelectedPieceMoved(Vector2 coords);
@@ -241,6 +247,7 @@ public abstract class Board : MonoBehaviour
     public void OnSelectedPieceMoved(Vector2Int intCoords)
     {
         // Debug.Log("Moving " + _selectedPiece.name + " on " + intCoords);
+        _senseManager.DestroySensePiece(intCoords);
         TryToTakeOpponentPiece(intCoords);
         UpdateBoardOnPieceMove(intCoords, _selectedPiece.OccupiedSquare, _selectedPiece, null);
         _selectedPiece.MovePiece(intCoords);
