@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d4e14b4e2aff3b47babbf36c9aa5e77, type: 3}
-  m_Name: New String Event Channel SO
+  m_Name: InfoBox
   m_EditorClassIdentifier: 

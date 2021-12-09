@@ -13,6 +13,8 @@ public abstract class Board : MonoBehaviour
 
     private Piece[,] grid;
     private Piece _selectedPiece;
+    private GameObject _selectedSensePiece;
+    private Vector2Int _selectedSenseCoords;
     private Vector2Int _selectedSenseSquare;
     private ChessGameController _chessController;
     private SenseManager _senseManager;
@@ -46,10 +48,17 @@ public abstract class Board : MonoBehaviour
                     SelectPiece(coords);
                 }
             }
+            if (_senseManager.SenseMatrix[coords.x, coords.y] != null)
+            {
+                SelectSensePiece(coords);
+            }
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Wait)
         {
-            
+            if (_senseManager.SenseMatrix[coords.x, coords.y] != null)
+            {
+                SelectSensePiece(coords);
+            }
         }
     }
 
@@ -59,7 +68,6 @@ public abstract class Board : MonoBehaviour
             return;
 
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
-        Piece clickedPiece = GetPieceOnSquare(coords);
         
         if (_chessController.turnState == ChessGameController.TurnState.Move)
         {
@@ -74,10 +82,37 @@ public abstract class Board : MonoBehaviour
                     DeselectPiece();
                 }
             }
+            else if (_selectedSensePiece)
+            {
+                if (CheckIfCoordinatesAreOnBoard(coords))
+                {
+                    _senseManager.CreateSensePiece(coords, _selectedSensePiece.GetComponent<Piece>());
+                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    DeselectSensePiece();
+                }
+                else
+                {
+                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    DeselectSensePiece();
+                }
+            }
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Wait)
         {
-
+            if (_selectedSensePiece)
+            {
+                if (CheckIfCoordinatesAreOnBoard(coords))
+                {
+                    _senseManager.CreateSensePiece(coords, _selectedSensePiece.GetComponent<Piece>());
+                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    DeselectSensePiece();
+                }
+                else
+                {
+                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    DeselectSensePiece();
+                }
+            }
         }
     }
 
@@ -117,7 +152,6 @@ public abstract class Board : MonoBehaviour
         }
     }
 
-    
     private void HandlePieceSelection(Vector2Int coords, Piece clickedPiece)
     {
         if (_selectedPiece)
@@ -145,26 +179,6 @@ public abstract class Board : MonoBehaviour
         {
             _senseManager.OnSenseSquare(coords);
         }
-        
-        /*if (CheckIfCoordinatesAreOnBoard(coords))
-        {
-            if (_selectedSenseSquare == coords)
-            {
-                _senseManager.OnSenseSquare(coords);
-                _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
-                _squareSelectorCreator.ClearSelection();
-            }
-            else
-            {
-                _selectedSenseSquare = coords;
-                ShowSenseIndicator();
-            }
-        }
-        else
-        {
-            _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
-            _squareSelectorCreator.ClearSelection();
-        }*/
     }
 
     private void ShowSenseIndicator()
@@ -182,6 +196,18 @@ public abstract class Board : MonoBehaviour
         }
         
         _squareSelectorCreator.ShowSelection(squaresData);
+    }
+
+    private void SelectSensePiece(Vector2Int coords)
+    {
+        _selectedSenseCoords = coords;
+        _selectedSensePiece = _senseManager.SenseMatrix[coords.x, coords.y];
+    }
+
+    private void DeselectSensePiece()
+    {
+        _selectedSenseCoords = Vector2Int.zero;
+        _selectedSensePiece = null;
     }
 
     private void SelectPiece(Vector2Int coords)

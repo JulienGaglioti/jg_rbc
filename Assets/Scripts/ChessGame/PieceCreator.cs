@@ -28,6 +28,7 @@ public class PieceCreator : MonoBehaviour
         if (prefab)
         {
             GameObject newPiece = Instantiate(prefab, _piecesParentTransform);
+            newPiece.name = type.ToString();
             return newPiece;
         }
 

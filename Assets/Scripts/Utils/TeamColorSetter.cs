@@ -25,10 +25,12 @@ public class TeamColorSetter : MonoBehaviour
         if (teamColor == TeamColor.Black)
         {
             meshMaterialSetter.SetSingleMaterial(blackMaterial);
+            name = "Black " + name;
         }
         else
         {
             meshMaterialSetter.SetSingleMaterial(whiteMaterial);
+            name = "White " + name;
         }
     }
 
@@ -54,5 +56,6 @@ public class TeamColorSetter : MonoBehaviour
     {
         meshMaterialSetter.SetSingleMaterial(senseMaterial);
         spriteRenderer.sprite = senseSprite;
+        name = name + " SENSE";
     }
 }

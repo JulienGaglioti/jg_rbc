@@ -10,6 +10,11 @@ public class SenseManager : MonoBehaviour
     private ChessGameController _chessGameController;
     private Board _board;
     private GameObject[,] senseMatrix = new GameObject[8, 8];
+    public GameObject[,] SenseMatrix
+    {
+        get => senseMatrix;
+        set => senseMatrix = value;
+    }
 
     public void SetDependencies(Board board, ChessGameController controller)
     {
@@ -55,7 +60,7 @@ public class SenseManager : MonoBehaviour
         }
     }
 
-    private void CreateSensePiece(Vector2Int coords, Piece pieceToCreate)
+    public void CreateSensePiece(Vector2Int coords, Piece pieceToCreate)
     {
         DestroySensePiece(coords);
         GameObject sensePiece = pieceCreator.CreatePiece(pieceToCreate.GetType());
@@ -65,7 +70,7 @@ public class SenseManager : MonoBehaviour
         senseMatrix[coords.x, coords.y] = sensePiece;
     }
 
-    private void DestroySensePiece(Vector2Int coords)
+    public void DestroySensePiece(Vector2Int coords)
     {
         if (senseMatrix[coords.x, coords.y])
         {
