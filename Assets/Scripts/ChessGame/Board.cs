@@ -39,17 +39,43 @@ public abstract class Board : MonoBehaviour
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Move)
         {
-            HandlePieceSelection(coords, clickedPiece);
+            if (clickedPiece != null)
+            {
+                SelectPiece(coords);
+            }
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Wait)
         {
-            Debug.LogError("WAITING");
+            
         }
     }
 
     public void OnButtonUp(Vector3 inputPosition)
     {
+        if (!_chessController)
+            return;
+
+        Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
+        Piece clickedPiece = GetPieceOnSquare(coords);
         
+        if (_chessController.turnState == ChessGameController.TurnState.Move)
+        {
+            if (_selectedPiece)
+            {
+                if (_selectedPiece.CanMoveTo(coords))
+                {
+                    SelectedPieceMoved(coords);
+                }
+                else
+                {
+                    DeselectPiece();
+                }
+            }
+        }
+        else if (_chessController.turnState == ChessGameController.TurnState.Wait)
+        {
+
+        }
     }
 
     public abstract void SelectedPieceMoved(Vector2 coords);
@@ -88,6 +114,7 @@ public abstract class Board : MonoBehaviour
         }
     }
 
+    
     private void HandlePieceSelection(Vector2Int coords, Piece clickedPiece)
     {
         if (_selectedPiece)
@@ -156,8 +183,8 @@ public abstract class Board : MonoBehaviour
 
     private void SelectPiece(Vector2Int coords)
     {
-        Piece piece = GetPieceOnSquare(coords);
-        //_chessController.RemoveMovesEnablingAttackOnPieceOfType<King>(piece);
+        // Piece piece = GetPieceOnSquare(coords);
+        // _chessController.RemoveMovesEnablingAttackOnPieceOfType<King>(piece);
         SetSelectedPiece(coords);
         List<Vector2Int> indicatorSquares = _selectedPiece.availableMoves;
         ShowIndicatorSquares(indicatorSquares);

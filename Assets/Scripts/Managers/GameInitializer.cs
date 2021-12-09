@@ -17,6 +17,9 @@ public class GameInitializer : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private CameraSetup cameraSetup;
 
+    [Header("Events")] 
+    public EmptyEventChannelSO dependenciesSet;
+
     public void CreateMultiPlayerBoard()
     {
         if (!networkManager.IsRoomFull())
@@ -42,6 +45,7 @@ public class GameInitializer : MonoBehaviour
         networkManager.SetDependencies(controller);
         senseManager.SetDependencies(board, controller);
         board.SetDependencies(controller, senseManager);
+        dependenciesSet.RaiseEvent();
     }
 
     public void InitializeSinglePlayerController()
