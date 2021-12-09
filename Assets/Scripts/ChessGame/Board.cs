@@ -24,6 +24,34 @@ public abstract class Board : MonoBehaviour
         CreateGrid();
     }
 
+    public void OnButtonDown(Vector3 inputPosition)
+    {
+        if (!_chessController)
+            return;
+        
+        Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
+        Piece clickedPiece = GetPieceOnSquare(coords);
+        
+        // Just using enums and if statements for now. Change to state pattern later if there's some time left
+        if (_chessController.turnState == ChessGameController.TurnState.Sense)
+        {
+            HandleSenseClick(coords);
+        }
+        else if (_chessController.turnState == ChessGameController.TurnState.Move)
+        {
+            HandlePieceSelection(coords, clickedPiece);
+        }
+        else if (_chessController.turnState == ChessGameController.TurnState.Wait)
+        {
+            Debug.LogError("WAITING");
+        }
+    }
+
+    public void OnButtonUp(Vector3 inputPosition)
+    {
+        
+    }
+
     public abstract void SelectedPieceMoved(Vector2 coords);
     public abstract void SetSelectedPiece(Vector2 coords);
 
@@ -38,10 +66,7 @@ public abstract class Board : MonoBehaviour
         grid = new Piece[BOARD_SIZE, BOARD_SIZE];
     }
 
-    public Vector3 CalculatePositionFromCoords(Vector2Int coords)
-    {
-        return bottomLeftSquareTransform.position + new Vector3(coords.x * squareSize, 0f, coords.y * squareSize);
-    }
+    
 
     public void OnSquareSelected(Vector3 inputPosition)
     {
@@ -59,7 +84,7 @@ public abstract class Board : MonoBehaviour
         }
         else
         {
-            HandleSenseSelection(coords);
+            HandleSenseClick(coords);
         }
     }
 
@@ -84,9 +109,14 @@ public abstract class Board : MonoBehaviour
         }
     }
 
-    private void HandleSenseSelection(Vector2Int coords)
+    private void HandleSenseClick(Vector2Int coords)
     {
         if (CheckIfCoordinatesAreOnBoard(coords))
+        {
+            _senseManager.OnSenseSquare(coords);
+        }
+        
+        /*if (CheckIfCoordinatesAreOnBoard(coords))
         {
             if (_selectedSenseSquare == coords)
             {
@@ -104,7 +134,7 @@ public abstract class Board : MonoBehaviour
         {
             _selectedSenseSquare = new Vector2Int(333, 333); // just a random out of bounds number
             _squareSelectorCreator.ClearSelection();
-        }
+        }*/
     }
 
     private void ShowSenseIndicator()
@@ -201,6 +231,11 @@ public abstract class Board : MonoBehaviour
             return grid[coords.x, coords.y];
         }
         return null;
+    }
+
+    public Vector3 CalculatePositionFromCoords(Vector2Int coords)
+    {
+        return bottomLeftSquareTransform.position + new Vector3(coords.x * squareSize, 0f, coords.y * squareSize);
     }
 
     public bool CheckIfCoordinatesAreOnBoard(Vector2Int coords)

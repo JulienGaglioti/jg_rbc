@@ -102,6 +102,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _multiPlayerController.StartNewGame();
         _multiPlayerController.MakeEnemyPiecesInvisible();
         _multiPlayerController.SetupCamera((TeamColor)team);
+        if (team == 1) // white
+        {
+            _multiPlayerController.SetTurnState(ChessGameController.TurnState.Sense);
+        }
+        else
+        {
+            _multiPlayerController.SetTurnState(ChessGameController.TurnState.Wait);
+        }
     }
 
     #endregion

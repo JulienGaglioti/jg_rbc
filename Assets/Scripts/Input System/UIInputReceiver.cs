@@ -11,7 +11,7 @@ public class UIInputReceiver : InputReceiver
     {
         foreach (var handler in inputHandlers)
         {
-            handler.ProcessInput(Input.mousePosition, gameObject, () => onClickEvent.Invoke());
+            handler.ProcessInput(Input.mousePosition, gameObject, () => onClickEvent.Invoke(), true);
         }
     }
 }

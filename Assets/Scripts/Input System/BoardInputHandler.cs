@@ -12,8 +12,15 @@ public class BoardInputHandler : MonoBehaviour, IInputHandler
         _board = GetComponent<Board>();
     }
 
-    public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action callback)
+    public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action callback, bool buttonDown)
     {
-        _board.OnSquareSelected(inputPosition);
+        if (buttonDown)
+        {
+            _board.OnButtonDown(inputPosition);
+        }
+        else
+        {
+            _board.OnButtonUp(inputPosition);
+        }
     }
 }

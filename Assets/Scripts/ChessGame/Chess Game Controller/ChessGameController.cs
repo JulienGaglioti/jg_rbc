@@ -11,6 +11,11 @@ public abstract class ChessGameController : MonoBehaviour
     {
         Init, Play, Finished
     }
+
+    public enum TurnState
+    {
+        Sense, Move, Wait
+    }
     
     [SerializeField] private BoardLayout startingBoardLayout;
     private Board _board;
@@ -24,6 +29,7 @@ public abstract class ChessGameController : MonoBehaviour
     protected ChessPlayer _localPlayer;
     [SerializeField] protected bool _hasSensed;
     protected GameState _gameState;
+    public TurnState turnState;
 
     private void Awake()
     {
@@ -74,6 +80,11 @@ public abstract class ChessGameController : MonoBehaviour
         _whitePlayer.OnGameRestarted();
         _blackPlayer.OnGameRestarted();
         StartNewGame();
+    }
+
+    public void SetTurnState(TurnState state)
+    {
+        turnState = state;
     }
 
     private void DestroyAllPieces()
@@ -183,12 +194,21 @@ public abstract class ChessGameController : MonoBehaviour
 
     public void Sense()
     {
+        SetTurnState(TurnState.Move);
         _hasSensed = true;
     }
 
     private void ChangeActiveTeam()
     {
         _activePlayer = _activePlayer == _whitePlayer ? _blackPlayer : _whitePlayer;
+        if (turnState == TurnState.Move)
+        {
+            SetTurnState(TurnState.Wait);
+        }
+        else
+        {
+            SetTurnState(TurnState.Sense);
+        }
     }
 
     protected ChessPlayer GetOpponentToPlayer(ChessPlayer player)
