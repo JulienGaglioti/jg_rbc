@@ -23,16 +23,16 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchMode()
     {
-        if (is2d)
+        if (GameManager.Instance.is2d)
         {
-            is2d = false;
+            GameManager.Instance.is2d = false;
             mainCamera.transform.position = originalPosition;
             mainCamera.transform.rotation = Quaternion.Euler(originalRotation);
             mainCamera.orthographic = false;
         }
         else
         {
-            is2d = true;
+            GameManager.Instance.is2d = true;
             mainCamera.transform.position = new Vector3(0, 18, 0);
             mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, originalRotation.y, 0));
             mainCamera.orthographic = true;

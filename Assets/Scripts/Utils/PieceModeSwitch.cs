@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,14 @@ public class PieceModeSwitch : MonoBehaviour
     public GameObject gameObject2d;
     
     private bool _is2d;
+
+    private void Awake()
+    {
+        if (GameManager.Instance.is2d)
+        {
+            SwitchMode();
+        }
+    }
 
     public void SwitchMode()
     {
