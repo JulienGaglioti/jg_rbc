@@ -18,6 +18,8 @@ public abstract class ChessGameController : MonoBehaviour
     }
     
     [SerializeField] private BoardLayout startingBoardLayout;
+    [SerializeField] private StringEventChannelSO infoBox;
+    
     private Board _board;
     private UIManager _uiManager;
     private CameraSetup _cameraSetup;
@@ -85,6 +87,7 @@ public abstract class ChessGameController : MonoBehaviour
     public void SetTurnState(TurnState state)
     {
         turnState = state;
+        infoBox.RaiseEvent(state + " state");
     }
 
     private void DestroyAllPieces()

@@ -41,7 +41,10 @@ public abstract class Board : MonoBehaviour
         {
             if (clickedPiece != null)
             {
-                SelectPiece(coords);
+                if (_chessController.IsTeamTurnActive(clickedPiece.Team))
+                {
+                    SelectPiece(coords);
+                }
             }
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Wait)

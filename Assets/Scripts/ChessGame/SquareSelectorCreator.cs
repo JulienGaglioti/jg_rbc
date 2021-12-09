@@ -18,7 +18,7 @@ public class SquareSelectorCreator : MonoBehaviour
             instantiatedSelectors.Add(selector);
             foreach (var setter in selector.GetComponentsInChildren<MaterialSetter>())
             {
-                setter.SetSingleMaterial(data.Value ? freeSquareMaterial : enemySquareMaterial);
+                setter.SetSingleMaterial(freeSquareMaterial);
             }
         }
     }

@@ -66,4 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingBoardLayout: {fileID: 11400000, guid: 1b6cd4e1dc5ed7b4b86960ca9f1f3491, type: 2}
+  infoBox: {fileID: 11400000, guid: c052f01e6fde8ed46a4e06b123e30b60, type: 2}
   _hasSensed: 0
+  turnState: 0
