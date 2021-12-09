@@ -148,14 +148,7 @@ public abstract class Board : MonoBehaviour
         
         // Debug.Log("coord: "+coords+", piece: "+clickedPiece);
 
-        if (_chessController.HasPlayerSensed())
-        {
-            HandlePieceSelection(coords, clickedPiece);
-        }
-        else
-        {
-            HandleSenseClick(coords);
-        }
+        HandlePieceSelection(coords, clickedPiece);
     }
 
     private void HandlePieceSelection(Vector2Int coords, Piece clickedPiece)

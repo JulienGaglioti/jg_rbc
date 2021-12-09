@@ -29,7 +29,6 @@ public abstract class ChessGameController : MonoBehaviour
     protected ChessPlayer _blackPlayer;
     protected ChessPlayer _activePlayer;
     protected ChessPlayer _localPlayer;
-    [SerializeField] protected bool _hasSensed;
     protected GameState _gameState;
     public TurnState turnState;
 
@@ -122,6 +121,14 @@ public abstract class ChessGameController : MonoBehaviour
         currentPlayer.AddPiece(newPiece);
     }
 
+    public void PassTurn()
+    {
+        if (turnState == TurnState.Move)
+        {
+            EndTurn();
+        }
+    }
+
     public void EndTurn()
     {
         GenerateAllPossiblePlayerMoves(_activePlayer);
@@ -132,7 +139,6 @@ public abstract class ChessGameController : MonoBehaviour
         }
         else
         {
-            _hasSensed = false;
             ChangeActiveTeam();
         }
     }
@@ -190,15 +196,9 @@ public abstract class ChessGameController : MonoBehaviour
         return (_activePlayer.Team == team);
     }
 
-    public bool HasPlayerSensed()
-    {
-        return _hasSensed;
-    }
-
     public void Sense()
     {
         SetTurnState(TurnState.Move);
-        _hasSensed = true;
     }
 
     private void ChangeActiveTeam()

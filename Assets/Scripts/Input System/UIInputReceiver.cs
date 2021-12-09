@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class UIInputReceiver : InputReceiver
 {
-    [SerializeField] private UnityEvent onClickEvent;
+    public UnityEvent onClickEvent;
     
     public override void OnInputReceived()
     {
