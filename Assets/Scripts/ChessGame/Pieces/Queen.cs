@@ -56,8 +56,6 @@ public class Queen : Piece
         {
             Vector2Int nextCoords = OccupiedSquare + direction * i;
             Piece piece = ChessBoard.GetPieceOnSquare(nextCoords);
-            if (!ChessBoard.CheckIfCoordinatesAreOnBoard(nextCoords))
-                break;
 
             if (piece != null)
             {
