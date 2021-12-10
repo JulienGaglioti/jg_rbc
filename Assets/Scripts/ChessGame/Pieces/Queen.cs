@@ -49,7 +49,8 @@ public class Queen : Piece
     public override Vector2Int AttemptMove(Vector2Int coords)
     {
         var direction = GetNormalizedDirection(coords - OccupiedSquare);
-        float range = Board.BOARD_SIZE;
+        int range = Mathf.Max(Mathf.Abs(coords.x - OccupiedSquare.x), Mathf.Abs(coords.y - OccupiedSquare.y));
+        print(range);
         Vector2Int realCoords = coords;
 
         for (int i = 1; i <= range; i++)
