@@ -46,10 +46,10 @@ public class TeamColorSetter : MonoBehaviour
         }
     }
 
-    public void MakeInvisible()
+    public void MakeVisible(bool b)
     {
-        meshRenderer.enabled = false;
-        spriteRenderer.enabled = false;
+        meshRenderer.enabled = b;
+        spriteRenderer.enabled = b;
     }
 
     public void MakeSensePiece()

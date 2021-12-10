@@ -53,7 +53,7 @@ public abstract class Piece : MonoBehaviour
     {
         //GetComponent<MeshRenderer>().enabled = false;
         
-        teamColorSetter.MakeInvisible();
+        teamColorSetter.MakeVisible(false);
     }
 
     public bool IsFromSameTeam(Piece piece)
