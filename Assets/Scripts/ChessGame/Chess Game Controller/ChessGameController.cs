@@ -184,6 +184,7 @@ public abstract class ChessGameController : MonoBehaviour
     private void EndGame()
     {
         _uiManager.OnChessGameFinished(_activePlayer.Team.ToString());
+        SetTurnState(TurnState.Wait);
         SetGameState(GameState.Finished);
     }
 

@@ -66,7 +66,6 @@ public class Queen : Piece
                 }
             }
         }
-        Debug.Log(realCoords);
 
         return realCoords;
     }

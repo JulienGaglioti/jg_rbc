@@ -103,7 +103,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             _multiPlayerController.MakeEnemyPiecesInvisible();
         }
-
+        GameManager.Instance.playingAsBlack = team == 0;
         _multiPlayerController.SetupCamera((TeamColor)team);
         if (team == 1) // white
         {

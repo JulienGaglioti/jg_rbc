@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeamColorSetter : MonoBehaviour
+public class PieceAppearenceSetter : MonoBehaviour
 {
     public Material blackMaterial;
     public Material whiteMaterial;
@@ -13,7 +14,15 @@ public class TeamColorSetter : MonoBehaviour
     public MaterialSetter meshMaterialSetter;
     public SpriteRenderer spriteRenderer;
     public MeshRenderer meshRenderer;
-    
+
+    private void Start()
+    {
+        if (GameManager.Instance.playingAsBlack)
+        {
+            FlipSprite();
+        }
+    }
+
     public void SetColorByTeam(TeamColor teamColor)
     {
         SetMeshMaterial(teamColor);
@@ -57,5 +66,10 @@ public class TeamColorSetter : MonoBehaviour
         meshMaterialSetter.SetSingleMaterial(senseMaterial);
         spriteRenderer.sprite = senseSprite;
         name = name + " SENSE";
+    }
+
+    private void FlipSprite()
+    {
+        spriteRenderer.transform.localEulerAngles = new Vector3(90, 180, 0);
     }
 }

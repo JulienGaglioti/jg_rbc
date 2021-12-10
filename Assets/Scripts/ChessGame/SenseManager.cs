@@ -66,7 +66,7 @@ public class SenseManager : MonoBehaviour
         GameObject sensePiece = pieceCreator.CreatePiece(pieceToCreate.GetType());
         
         sensePiece.transform.position = _board.CalculatePositionFromCoords(coords);
-        sensePiece.GetComponent<TeamColorSetter>().MakeSensePiece();
+        sensePiece.GetComponent<PieceAppearenceSetter>().MakeSensePiece();
         senseMatrix[coords.x, coords.y] = sensePiece;
     }
 

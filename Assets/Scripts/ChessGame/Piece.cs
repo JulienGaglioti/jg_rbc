@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(IObjectTweener))]
 public abstract class Piece : MonoBehaviour
 {
-    private TeamColorSetter teamColorSetter;
+    private PieceAppearenceSetter _pieceAppearenceSetter;
     public Board ChessBoard { protected get; set; }
     public Vector2Int OccupiedSquare { get; set; }
     public TeamColor Team { get; set; }
@@ -21,7 +21,7 @@ public abstract class Piece : MonoBehaviour
     {
         availableMoves = new List<Vector2Int>();
         tweener = GetComponent<IObjectTweener>();
-        teamColorSetter = GetComponent<TeamColorSetter>();
+        _pieceAppearenceSetter = GetComponent<PieceAppearenceSetter>();
         HasMoved = false;
     }
 
@@ -29,7 +29,7 @@ public abstract class Piece : MonoBehaviour
 
     public void SetTeamColor(TeamColor color)
     {
-        teamColorSetter.SetColorByTeam(color);
+        _pieceAppearenceSetter.SetColorByTeam(color);
     }
 
     protected Vector2Int GetNormalizedDirection(Vector2Int direction)
@@ -53,7 +53,7 @@ public abstract class Piece : MonoBehaviour
     {
         //GetComponent<MeshRenderer>().enabled = false;
         
-        teamColorSetter.MakeVisible(false);
+        _pieceAppearenceSetter.MakeVisible(false);
     }
 
     public bool IsFromSameTeam(Piece piece)
