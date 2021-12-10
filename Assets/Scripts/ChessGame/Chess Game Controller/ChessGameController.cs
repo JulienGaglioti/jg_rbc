@@ -19,7 +19,7 @@ public abstract class ChessGameController : MonoBehaviour
     
     [SerializeField] private BoardLayout startingBoardLayout;
     [SerializeField] private StringEventChannelSO infoBox;
-    [SerializeField] protected EmptyEventChannelSO gameStarted;
+    public EmptyEventChannelSO gameStarted;
     
     private Board _board;
     private UIManager _uiManager;

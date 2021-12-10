@@ -49,7 +49,7 @@ public class GameInitializer : MonoBehaviour
         passButtonDependency.SetController(controller);
         board.SetDependencies(controller, senseManager);
         SetPlatformsDependencies(board);
-        ActivateSensePlatforms();
+        ActivateSensePlatforms(true);
         dependenciesSet.RaiseEvent();
     }
 
@@ -79,11 +79,11 @@ public class GameInitializer : MonoBehaviour
         }
     }
 
-    public void ActivateSensePlatforms()
+    public void ActivateSensePlatforms(bool b)
     {
         foreach (var platform in platforms)
         {
-            platform.gameObject.SetActive(true);
+            platform.gameObject.SetActive(b);
         }
     }
 }

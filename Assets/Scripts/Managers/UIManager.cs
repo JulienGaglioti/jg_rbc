@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject connectScreen;
     [SerializeField] private GameObject teamSelectionScreen;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject statusScreen;
 
     [Header("In Game Objects")] 
     [SerializeField] private GameObject passButton;
@@ -33,45 +34,48 @@ public class UIManager : MonoBehaviour
 
     [Header("Other UI")]
     [SerializeField] private TMP_Dropdown gameLevelSelection;
+    [SerializeField] private TMP_InputField roomNameInputField;
+    [SerializeField] private TextMeshProUGUI roomName;
 
     private void Awake()
     {
-        gameLevelSelection.AddOptions(Enum.GetNames(typeof(ChessLevel)).ToList());
+        // gameLevelSelection.AddOptions(Enum.GetNames(typeof(ChessLevel)).ToList());
         OnGameLaunched();
     }
     private void OnGameLaunched()
     {
-        DisableAllScreens();
+        DisableMenuScreens();
         gameModeSelectionScreen.SetActive(true);
     }
 
     public void OnChessGameStarted()
     {
-        DisableAllScreens();
+        DisableMenuScreens();
         connectionStatusText.gameObject.SetActive(false);
     }
 
     public void OnSinglePlayerModeSelected()
     {
-        DisableAllScreens();
+        DisableMenuScreens();
     }
 
     public void OnMultiPlayerModeSelected()
     {
+        DisableMenuScreens();
         connectionStatusText.gameObject.SetActive(true);
-        DisableAllScreens();
         connectScreen.SetActive(true);
     }
 
     public void OnConnect()
     {
-        networkManager.SetPlayerLevel((ChessLevel)gameLevelSelection.value);
+        networkManager.SetRoomName(roomNameInputField.text);
+        roomName.SetText(roomNameInputField.text);
         networkManager.Connect();
     }
 
     internal void ShowTeamSelectionScreen()
     {
-        DisableAllScreens();
+        DisableMenuScreens();
         teamSelectionScreen.SetActive(true);
     }
 
@@ -86,7 +90,7 @@ public class UIManager : MonoBehaviour
         connectionStatusText.SetText(status);
     }
 
-    private void DisableAllScreens()
+    private void DisableMenuScreens()
     {
         gameOverScreen.SetActive(false);
         teamSelectionScreen.SetActive(false);
@@ -113,4 +117,25 @@ public class UIManager : MonoBehaviour
         passButton.SetActive(true);
         infoBox.SetActive(true);
     }
+
+    public void EnableStatusScreen(bool b)
+    {
+        statusScreen.SetActive(b);
+    }
+
+    public void ResetInitialUI()
+    {
+        DisableMenuScreens();
+        switchCameraButton.SetActive(false);
+        passButton.SetActive(false);
+        infoBox.SetActive(false);
+        gameModeSelectionScreen.SetActive(true);
+    }
+
+    public void ResetRoomName()
+    {
+        roomName.SetText("Room Name");
+        networkManager.SetRoomName("");
+    }
+    
 }

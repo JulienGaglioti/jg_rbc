@@ -33,6 +33,7 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
         if (_networkManager.IsRoomFull())
         {
             SetGameState(GameState.Play);
+            gameStarted.RaiseEvent();
         }
     }
 
@@ -91,11 +92,6 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
             object[] data = (object[])photonEvent.CustomData;
             GameState state = (GameState)data[0];
             _gameState = state;
-        }
-
-        if (_gameState == GameState.Play)
-        {
-            gameStarted.RaiseEvent();
         }
     }
 }
