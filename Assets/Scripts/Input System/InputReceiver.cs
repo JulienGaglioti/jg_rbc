@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class InputReceiver : MonoBehaviour
 {
     protected IInputHandler[] inputHandlers;
+    protected GameObject hitGameObject;
 
     public abstract void OnInputReceived();
 

@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 7119510124080874811}
   - component: {fileID: 6083798613866063564}
   - component: {fileID: 7119510124080874753}
-  - component: {fileID: 7119510124080874752}
   - component: {fileID: 7119510124080874754}
   - component: {fileID: 1365355702}
   m_Layer: 0
@@ -173,7 +172,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 0.7, z: 10}
+  m_Size: {x: 30, y: 0.7, z: 30}
   m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!114 &6083798613866063564
 MonoBehaviour:
@@ -189,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftSquareTransform: {fileID: 7119510124078391458}
   squareSize: 1
+  _selectedSensePiece: {fileID: 0}
 --- !u!114 &7119510124080874753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,18 +199,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9adc9f06273fe1a40a5e6a754cfc885e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7119510124080874752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7119510124080874810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0550a0c1d445d304a9665bc5fb741208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7119510124080874754

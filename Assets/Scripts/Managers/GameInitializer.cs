@@ -17,6 +17,7 @@ public class GameInitializer : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private CameraSetup cameraSetup;
     [SerializeField] private PassButtonDependency passButtonDependency;
+    [SerializeField] private List<SensePlatformInputHandler> platforms;
 
     [Header("Events")] 
     public EmptyEventChannelSO dependenciesSet;
@@ -47,6 +48,7 @@ public class GameInitializer : MonoBehaviour
         senseManager.SetDependencies(board, controller);
         passButtonDependency.SetController(controller);
         board.SetDependencies(controller, senseManager);
+        SetPlatformsDependencies(board);
         dependenciesSet.RaiseEvent();
     }
 
@@ -60,5 +62,13 @@ public class GameInitializer : MonoBehaviour
         board.SetDependencies(controller, senseManager);
         senseManager.SetDependencies(board, controller);
         controller.StartNewGame();
+    }
+
+    private void SetPlatformsDependencies(Board board)
+    {
+        foreach (var platform in platforms)
+        {
+            platform.SetBoard(board);
+        }
     }
 }

@@ -18,6 +18,7 @@ public class ColliderInputReceiver : InputReceiver
             if(Physics.Raycast(ray, out hit))
             {
                 clickPosition = hit.point;
+                hitGameObject = hit.collider.gameObject;
                 buttonDown = true;
                 OnInputReceived();
             }
@@ -29,6 +30,7 @@ public class ColliderInputReceiver : InputReceiver
             if (Physics.Raycast(ray, out hit))
             {
                 clickPosition = hit.point;
+                hitGameObject = hit.collider.gameObject;
                 buttonDown = false;
                 OnInputReceived();
             }
@@ -37,6 +39,8 @@ public class ColliderInputReceiver : InputReceiver
     
     public override void OnInputReceived()
     {
+        inputHandlers = hitGameObject.transform.GetComponents<IInputHandler>();
+        // print(hitGameObject.name);
         foreach (var handler in inputHandlers)
         {
             handler.ProcessInput(clickPosition, null, null, buttonDown);

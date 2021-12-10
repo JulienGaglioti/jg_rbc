@@ -10,7 +10,7 @@ public class PieceModeSwitch : MonoBehaviour
     
     private bool _is2d;
 
-    private void Awake()
+    private void Start()
     {
         if (GameManager.Instance.is2d)
         {

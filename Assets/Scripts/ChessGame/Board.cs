@@ -13,7 +13,8 @@ public abstract class Board : MonoBehaviour
 
     private Piece[,] grid;
     private Piece _selectedPiece;
-    private GameObject _selectedSensePiece;
+    public GameObject _selectedSensePiece;
+    private bool sensePieceFromPool;
     private Vector2Int _selectedSenseCoords;
     private Vector2Int _selectedSenseSquare;
     private ChessGameController _chessController;
@@ -34,7 +35,7 @@ public abstract class Board : MonoBehaviour
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
         Piece clickedPiece = GetPieceOnSquare(coords);
         
-        // Just using enums and if statements for now. Change to state pattern later if there's some time left
+        // Just using enums and nested if statements for now. Change to state pattern later if there's some time left
         if (_chessController.turnState == ChessGameController.TurnState.Sense)
         {
             HandleSenseClick(coords);
@@ -48,14 +49,14 @@ public abstract class Board : MonoBehaviour
                     SelectPiece(coords);
                 }
             }
-            if (_senseManager.SenseMatrix[coords.x, coords.y] != null)
+            if (CheckIfCoordinatesAreOnBoard(coords) && _senseManager.SenseMatrix[coords.x, coords.y] != null)
             {
                 SelectSensePiece(coords);
             }
         }
         else if (_chessController.turnState == ChessGameController.TurnState.Wait)
         {
-            if (_senseManager.SenseMatrix[coords.x, coords.y] != null)
+            if (CheckIfCoordinatesAreOnBoard(coords) && _senseManager.SenseMatrix[coords.x, coords.y] != null)
             {
                 SelectSensePiece(coords);
             }
@@ -87,12 +88,18 @@ public abstract class Board : MonoBehaviour
                 if (CheckIfCoordinatesAreOnBoard(coords))
                 {
                     _senseManager.CreateSensePiece(coords, _selectedSensePiece.GetComponent<Piece>());
-                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    if (!sensePieceFromPool)
+                    {
+                        _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    }
                     DeselectSensePiece();
                 }
                 else
                 {
-                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    if (!sensePieceFromPool)
+                    {
+                        _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    }
                     DeselectSensePiece();
                 }
             }
@@ -104,12 +111,19 @@ public abstract class Board : MonoBehaviour
                 if (CheckIfCoordinatesAreOnBoard(coords))
                 {
                     _senseManager.CreateSensePiece(coords, _selectedSensePiece.GetComponent<Piece>());
-                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    if (!sensePieceFromPool)
+                    {
+                        _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    }
+
                     DeselectSensePiece();
                 }
                 else
                 {
-                    _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    if (!sensePieceFromPool)
+                    {
+                        _senseManager.DestroySensePiece(_selectedSenseCoords);
+                    }
                     DeselectSensePiece();
                 }
             }
@@ -203,10 +217,17 @@ public abstract class Board : MonoBehaviour
         _selectedSensePiece = _senseManager.SenseMatrix[coords.x, coords.y];
     }
 
+    public void SelectSensePieceFromPool(Piece piece)
+    {
+        sensePieceFromPool = true;
+        _selectedSensePiece = piece.gameObject;
+    }
+
     private void DeselectSensePiece()
     {
         _selectedSenseCoords = Vector2Int.zero;
         _selectedSensePiece = null;
+        sensePieceFromPool = false;
     }
 
     private void SelectPiece(Vector2Int coords)
