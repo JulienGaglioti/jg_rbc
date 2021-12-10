@@ -67,5 +67,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingBoardLayout: {fileID: 11400000, guid: 1b6cd4e1dc5ed7b4b86960ca9f1f3491, type: 2}
   infoBox: {fileID: 11400000, guid: c052f01e6fde8ed46a4e06b123e30b60, type: 2}
-  _hasSensed: 0
+  gameStarted: {fileID: 11400000, guid: 2033e9273b199d2409fa20a19be3d2c2, type: 2}
   turnState: 0

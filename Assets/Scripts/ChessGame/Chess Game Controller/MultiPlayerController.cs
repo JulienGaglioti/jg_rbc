@@ -46,6 +46,19 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
         return true;
     }
 
+    protected override void ChangeActiveTeam()
+    {
+        _activePlayer = _activePlayer == _whitePlayer ? _blackPlayer : _whitePlayer;
+        if (turnState == TurnState.Move)
+        {
+            SetTurnState(TurnState.Wait);
+        }
+        else
+        {
+            SetTurnState(TurnState.Sense);
+        }
+    }
+
     public void SetNetworkManager(NetworkManager networkManager)
     {
         _networkManager = networkManager;
@@ -78,6 +91,11 @@ public class MultiPlayerController : ChessGameController, IOnEventCallback
             object[] data = (object[])photonEvent.CustomData;
             GameState state = (GameState)data[0];
             _gameState = state;
+        }
+
+        if (_gameState == GameState.Play)
+        {
+            gameStarted.RaiseEvent();
         }
     }
 }

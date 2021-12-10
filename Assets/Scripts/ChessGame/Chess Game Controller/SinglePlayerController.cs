@@ -12,6 +12,7 @@ public class SinglePlayerController : ChessGameController
     public override void TryToStartCurrentGame()
     {
         SetGameState(GameState.Play);
+        gameStarted.RaiseEvent();
     }
 
     public override bool CanPerformMove()
@@ -22,5 +23,10 @@ public class SinglePlayerController : ChessGameController
         }
 
         return true;
+    }
+
+    protected override void ChangeActiveTeam()
+    {
+        _activePlayer = _activePlayer == _whitePlayer ? _blackPlayer : _whitePlayer;
     }
 }

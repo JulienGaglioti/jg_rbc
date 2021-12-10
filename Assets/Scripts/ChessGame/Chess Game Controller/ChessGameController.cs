@@ -19,6 +19,7 @@ public abstract class ChessGameController : MonoBehaviour
     
     [SerializeField] private BoardLayout startingBoardLayout;
     [SerializeField] private StringEventChannelSO infoBox;
+    [SerializeField] protected EmptyEventChannelSO gameStarted;
     
     private Board _board;
     private UIManager _uiManager;
@@ -201,18 +202,7 @@ public abstract class ChessGameController : MonoBehaviour
         SetTurnState(TurnState.Move);
     }
 
-    private void ChangeActiveTeam()
-    {
-        _activePlayer = _activePlayer == _whitePlayer ? _blackPlayer : _whitePlayer;
-        if (turnState == TurnState.Move)
-        {
-            SetTurnState(TurnState.Wait);
-        }
-        else
-        {
-            SetTurnState(TurnState.Sense);
-        }
-    }
+    protected abstract void ChangeActiveTeam();
 
     protected ChessPlayer GetOpponentToPlayer(ChessPlayer player)
     {

@@ -25,6 +25,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject teamSelectionScreen;
     [SerializeField] private GameObject gameOverScreen;
 
+    [Header("In Game Objects")] 
+    [SerializeField] private GameObject passButton;
+    [SerializeField] private GameObject switchCameraButton;
+    [SerializeField] private GameObject infoBox;
+    
+
     [Header("Other UI")]
     [SerializeField] private TMP_Dropdown gameLevelSelection;
 
@@ -99,5 +105,12 @@ public class UIManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         resultText.SetText(winner + " won");
+    }
+
+    public void EnableInGameObjects()
+    {
+        switchCameraButton.SetActive(true);
+        passButton.SetActive(true);
+        infoBox.SetActive(true);
     }
 }

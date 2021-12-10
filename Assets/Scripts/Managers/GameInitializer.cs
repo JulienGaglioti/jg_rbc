@@ -49,6 +49,7 @@ public class GameInitializer : MonoBehaviour
         passButtonDependency.SetController(controller);
         board.SetDependencies(controller, senseManager);
         SetPlatformsDependencies(board);
+        ActivateSensePlatforms();
         dependenciesSet.RaiseEvent();
     }
 
@@ -59,8 +60,14 @@ public class GameInitializer : MonoBehaviour
         
         controller.SetDependencies(uiManager, board, cameraSetup);
         controller.CreatePlayers();
-        board.SetDependencies(controller, senseManager);
+        controller.SetTurnState(ChessGameController.TurnState.Move);
+
         senseManager.SetDependencies(board, controller);
+        passButtonDependency.SetController(controller);
+        board.SetDependencies(controller, senseManager);
+        SetPlatformsDependencies(board);
+        dependenciesSet.RaiseEvent();
+        
         controller.StartNewGame();
     }
 
@@ -69,6 +76,14 @@ public class GameInitializer : MonoBehaviour
         foreach (var platform in platforms)
         {
             platform.SetBoard(board);
+        }
+    }
+
+    public void ActivateSensePlatforms()
+    {
+        foreach (var platform in platforms)
+        {
+            platform.gameObject.SetActive(true);
         }
     }
 }

@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Singleplayer
+  m_text: Solo Test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1874,6 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657535549}
   - component: {fileID: 657535548}
+  - component: {fileID: 657535550}
   m_Layer: 0
   m_Name: Collider Input Receiver
   m_TagString: Untagged
@@ -1888,7 +1889,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657535547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0550a0c1d445d304a9665bc5fb741208, type: 3}
   m_Name: 
@@ -1907,6 +1908,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657535550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657535547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: 2033e9273b199d2409fa20a19be3d2c2, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 657535548}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &687873199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &731066848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3216,7 +3245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1147657685
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3232,11 +3261,11 @@ RectTransform:
   m_Father: {fileID: 322570112}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -639, y: 0}
-  m_SizeDelta: {x: 320, y: 100.973}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 540, y: 120}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1147657686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3299,6 +3328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201544665}
   - component: {fileID: 1201544664}
+  - component: {fileID: 1201544666}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -3327,6 +3357,9 @@ MonoBehaviour:
   connectScreen: {fileID: 476608210}
   teamSelectionScreen: {fileID: 1862448524}
   gameOverScreen: {fileID: 244724936}
+  passButton: {fileID: 2023713851}
+  switchCameraButton: {fileID: 731066847}
+  infoBox: {fileID: 1147657684}
   gameLevelSelection: {fileID: 1631606708}
 --- !u!4 &1201544665
 Transform:
@@ -3342,6 +3375,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1201544666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201544663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: 2033e9273b199d2409fa20a19be3d2c2, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1201544664}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: EnableInGameObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1217814666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4107,10 @@ PrefabInstance:
     - target: {fileID: 757024069551033874, guid: 6ca36b7ecce558f4a91d178411a9d84b, type: 3}
       propertyPath: m_Name
       value: King Sense Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 757024069551033874, guid: 6ca36b7ecce558f4a91d178411a9d84b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6835383220269540586, guid: 6ca36b7ecce558f4a91d178411a9d84b, type: 3}
       propertyPath: m_Size.y
@@ -5139,6 +5204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bishop Sense Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 7059316097836679284, guid: 68a653e106238d042941fa5142732a69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7059316097836679305, guid: 68a653e106238d042941fa5142732a69, type: 3}
       propertyPath: m_Size.y
       value: 1
@@ -5333,7 +5402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2023713852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5889,6 +5958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pawn Sense Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 1060845504313551226, guid: f02adff70cd44b64f843f140fe928b5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f02adff70cd44b64f843f140fe928b5a, type: 3}
 --- !u!1001 &3952296112333853105
@@ -5954,6 +6027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight Sense Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 6335568215687832669, guid: a57667d8f4dd12944ba8333515c13a01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6314307746109497845, guid: a57667d8f4dd12944ba8333515c13a01, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a57667d8f4dd12944ba8333515c13a01, type: 3}
@@ -6012,6 +6089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rook Sense Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 6009562641165606182, guid: e804e988560d4884bac62819dce4d51f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e804e988560d4884bac62819dce4d51f, type: 3}
 --- !u!1001 &7285612471379174782
@@ -6024,6 +6105,10 @@ PrefabInstance:
     - target: {fileID: 7285612472037276164, guid: ca921fd3f4ba80a4a92daa790b0a620d, type: 3}
       propertyPath: m_Name
       value: Queen Sense Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285612472037276164, guid: ca921fd3f4ba80a4a92daa790b0a620d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285612472037276414, guid: ca921fd3f4ba80a4a92daa790b0a620d, type: 3}
       propertyPath: m_RootOrder
