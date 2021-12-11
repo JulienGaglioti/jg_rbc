@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassButtonDependency : MonoBehaviour
+public class ButtonDependency : MonoBehaviour
 {
     private ChessGameController _controller;
 

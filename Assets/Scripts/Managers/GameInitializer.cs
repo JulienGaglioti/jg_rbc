@@ -16,8 +16,10 @@ public class GameInitializer : MonoBehaviour
     [SerializeField] private SenseManager senseManager;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private CameraFlip cameraFlip;
-    [SerializeField] private PassButtonDependency passButtonDependency;
+    [SerializeField] private ButtonDependency passButton;
+    [SerializeField] private ButtonDependency nextButton;
     [SerializeField] private List<SensePlatformInputHandler> platforms;
+    [SerializeField] private AutomatedTest automatedTest;
 
     [Header("Events")] 
     public EmptyEventChannelSO dependenciesSet;
@@ -46,7 +48,9 @@ public class GameInitializer : MonoBehaviour
         
         networkManager.SetDependencies(controller);
         senseManager.SetDependencies(board, controller);
-        passButtonDependency.SetController(controller);
+        passButton.SetController(controller);
+        nextButton.SetController(controller);
+        automatedTest.SetDependencies(board);
         board.SetDependencies(controller, senseManager);
         SetPlatformsDependencies(board);
         ActivateSensePlatforms(true);
@@ -63,7 +67,9 @@ public class GameInitializer : MonoBehaviour
         controller.SetTurnState(ChessGameController.TurnState.Move);
 
         senseManager.SetDependencies(board, controller);
-        passButtonDependency.SetController(controller);
+        passButton.SetController(controller);
+        nextButton.SetController(controller);
+        automatedTest.SetDependencies(board);
         board.SetDependencies(controller, senseManager);
         SetPlatformsDependencies(board);
         dependenciesSet.RaiseEvent();

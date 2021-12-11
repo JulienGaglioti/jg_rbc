@@ -130,7 +130,7 @@ public abstract class Board : MonoBehaviour
         }
     }
 
-    private void AttemptMovement(Vector2Int coords)
+    public void AttemptMovement(Vector2Int coords)
     {
         Vector2Int realCoords = _selectedPiece.AttemptMove(coords);
         SelectedPieceMoved(realCoords);

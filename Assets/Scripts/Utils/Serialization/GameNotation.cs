@@ -6,8 +6,19 @@ using UnityEngine;
 [System.Serializable]
 public class GameNotation
 {
+    public string type;
+    private string win_reason;
+    public string winner_color;
+    public string black_name;
+    public string white_name;
+    private string capture_squares;
+    private string fens_after_move;
+    private string fens_before_move;
     public Moves requested_moves;
+    private string sense_results;
+    private string senses;
     public Moves taken_moves;
+    
         
     public static GameNotation CreateFromJSON(string jsonString)
     {
@@ -28,8 +39,4 @@ public class GameNotation
         public string value;
     }
 
-    // Given JSON input:
-    // {"name":"Dr Charles","lives":3,"health":0.8}
-    // this example will return a PlayerInfo object with
-    // name == "Dr Charles", lives == 3, and health == 0.8f.
 }

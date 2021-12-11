@@ -1,0 +1,3860 @@
+{
+  "black_name": "StrangeFish2",
+  "capture_squares": {
+    "false": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      18,
+      9,
+      null,
+      18,
+      26,
+      null,
+      null,
+      null,
+      null,
+      null,
+      35,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      35,
+      27,
+      null,
+      20,
+      11,
+      null,
+      null,
+      null,
+      15
+    ],
+    "true": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      18,
+      null,
+      null,
+      26,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      35,
+      null,
+      null,
+      null,
+      33,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "fens_after_move": {
+    "false": [
+      "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+      "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 1 4",
+      "r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/5NP1/PP2PP1P/RNBQKB1R w KQkq d6 0 5",
+      "r1bqk2r/ppp2ppp/2n1pn2/3p4/1bPP4/5NP1/PP2PPBP/RNBQK2R w KQkq - 2 6",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/1bPPn3/2N2NP1/PP2PPBP/R1BQK2R w KQkq - 4 7",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPnB2/2b2NP1/PP2PPBP/R2QK2R w KQkq - 0 8",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/5NP1/Pb1BPPBP/R2QK2R w KQkq - 0 9",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2n2NP1/Pb1BPPBP/1R1QK2R w Kkq - 2 10",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2b2NP1/P3PPBP/1R1QK2R w Kkq - 0 11",
+      "r1bqk2r/ppp2ppp/2n1p3/8/2pP4/2b2NP1/P3PPBP/1R1Q1RK1 w kq - 0 12",
+      "r1bqk2r/ppp2ppp/2n1p3/b7/2pP4/5NP1/P1Q1PPBP/1R3RK1 w kq - 2 13",
+      "r1bqk2r/ppp2ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R3RK1 w kq - 1 14",
+      "r2qk2r/pppb1ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R1R2K1 w kq - 3 15",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/2QP4/6P1/P3PPBP/1R1R2K1 w kq - 5 16",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/3P4/6P1/P3PPBP/1RQR2K1 w kq - 7 17",
+      "r2qk2r/pppb1ppp/1b6/n2pN3/3P4/6P1/P3PP1P/1RQR2K1 w kq - 0 18",
+      "r2qkr2/pppb1ppp/1b6/n2pN3/3P4/2Q3P1/P3PP1P/1R1R2K1 w q - 2 19",
+      "r2qkr2/pppb1ppp/1bn5/3p4/3P4/2Q2NP1/P3PP1P/1R1R2K1 w q - 4 20",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/5NP1/P3PP1P/1R1RQ1K1 w q - 6 21",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/6P1/P2NPP1P/1R1RQ1K1 w q - 8 22",
+      "r3kr2/ppp1qppp/1bn1b3/3p4/3P4/P5P1/3NPP1P/1R1RQ1K1 w q - 1 23",
+      "2kr1r2/ppp1qppp/1bn1b3/3p4/3PP3/P5P1/3N1P1P/1R1RQ1K1 w - - 1 24",
+      "2k2r2/ppp1qppp/1bn1b3/3r4/3P4/P5P1/3N1P1P/1R1RQ1K1 w - - 0 25",
+      "2k2r2/ppp1qppp/1b2b3/3r4/3n4/P5P1/3NQP1P/1R1R2K1 w - - 0 26",
+      "2k2r2/ppp1qppp/1b2b3/1n1r4/8/P3Q1P1/3N1P1P/1R1R2K1 w - - 2 27",
+      "2k2r2/ppp1qppp/4b3/1n1r4/8/P3b1P1/3N1P1P/1R1R3K w - - 0 28",
+      "2k2r2/ppp1qppp/4b3/1R6/8/P3b1P1/3r1P1P/3R3K w - - 0 29",
+      "2k2r2/ppp1qppp/8/1R1b4/7P/P3b1P1/3r1P2/3R3K w - - 1 30",
+      "2k2r2/ppp2ppp/8/1R1b4/4q2P/P3b1P1/3r1P1K/3R4 w - - 3 31",
+      "2k2r2/ppp2ppp/8/3b4/7P/P3b1P1/3r1PqK/1R1R4 w - - 5 32",
+      "2k2r2/ppp2ppp/8/3b4/P6P/4b1P1/3r1P1q/1R1R4 w - - 0 33"
+    ],
+    "true": [
+      "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq d3 0 1",
+      "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+      "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 2 4",
+      "r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/5NP1/PP2PPBP/RNBQK2R b KQkq - 1 5",
+      "r1bqk2r/ppp2ppp/2n1pn2/3p4/1bPP4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 3 6",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/1bPPnB2/2N2NP1/PP2PPBP/R2QK2R b KQkq - 5 7",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/2b2NP1/PP1BPPBP/R2QK2R b KQkq - 1 8",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/5NP1/Pb1BPPBP/1R1QK2R b Kkq - 1 9",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2B2NP1/Pb2PPBP/1R1QK2R b Kkq - 0 10",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2b2NP1/P3PPBP/1R1Q1RK1 b kq - 1 11",
+      "r1bqk2r/ppp2ppp/2n1p3/8/2pP4/2b2NP1/P1Q1PPBP/1R3RK1 b kq - 1 12",
+      "r1bqk2r/ppp2ppp/2n1p3/b7/2QP4/5NP1/P3PPBP/1R3RK1 b kq - 0 13",
+      "r1bqk2r/ppp2ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R1R2K1 b kq - 2 14",
+      "r2qk2r/pppb1ppp/1bn1p3/4N3/2QP4/6P1/P3PPBP/1R1R2K1 b kq - 4 15",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/3P4/6P1/P3PPBP/1RQR2K1 b kq - 6 16",
+      "r2qk2r/pppb1ppp/1b2p3/n2BN3/3P4/6P1/P3PP1P/1RQR2K1 b kq - 8 17",
+      "r2qk2r/pppb1ppp/1b6/n2pN3/3P4/2Q3P1/P3PP1P/1R1R2K1 b kq - 1 18",
+      "r2qkr2/pppb1ppp/1b6/n2p4/3P4/2Q2NP1/P3PP1P/1R1R2K1 b q - 3 19",
+      "r2qkr2/pppb1ppp/1bn5/3p4/3P4/5NP1/P3PP1P/1R1RQ1K1 b q - 5 20",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/6P1/P2NPP1P/1R1RQ1K1 b q - 7 21",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/P5P1/3NPP1P/1R1RQ1K1 b q - 0 22",
+      "r3kr2/ppp1qppp/1bn1b3/3p4/3PP3/P5P1/3N1P1P/1R1RQ1K1 b q e3 0 23",
+      "2kr1r2/ppp1qppp/1bn1b3/3P4/3P4/P5P1/3N1P1P/1R1RQ1K1 b - - 0 24",
+      "2k2r2/ppp1qppp/1bn1b3/3r4/3P4/P5P1/3NQP1P/1R1R2K1 b - - 1 25",
+      "2k2r2/ppp1qppp/1b2b3/3r4/3n4/P3Q1P1/3N1P1P/1R1R2K1 b - - 1 26",
+      "2k2r2/ppp1qppp/1b2b3/1n1r4/8/P3Q1P1/3N1P1P/1R1R3K b - - 3 27",
+      "2k2r2/ppp1qppp/4b3/1R1r4/8/P3b1P1/3N1P1P/3R3K b - - 0 28",
+      "2k2r2/ppp1qppp/4b3/1R6/7P/P3b1P1/3r1P2/3R3K b - h3 0 29",
+      "2k2r2/ppp1qppp/8/1R1b4/7P/P3b1P1/3r1P1K/3R4 b - - 2 30",
+      "2k2r2/ppp2ppp/8/3b4/4q2P/P3b1P1/3r1P1K/1R1R4 b - - 4 31",
+      "2k2r2/ppp2ppp/8/3b4/P6P/4b1P1/3r1PqK/1R1R4 b - - 0 32"
+    ]
+  },
+  "fens_before_move": {
+    "false": [
+      "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq d3 0 1",
+      "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+      "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 2 4",
+      "r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/5NP1/PP2PPBP/RNBQK2R b KQkq - 1 5",
+      "r1bqk2r/ppp2ppp/2n1pn2/3p4/1bPP4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 3 6",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/1bPPnB2/2N2NP1/PP2PPBP/R2QK2R b KQkq - 5 7",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/2b2NP1/PP1BPPBP/R2QK2R b KQkq - 1 8",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/5NP1/Pb1BPPBP/1R1QK2R b Kkq - 1 9",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2B2NP1/Pb2PPBP/1R1QK2R b Kkq - 0 10",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2b2NP1/P3PPBP/1R1Q1RK1 b kq - 1 11",
+      "r1bqk2r/ppp2ppp/2n1p3/8/2pP4/2b2NP1/P1Q1PPBP/1R3RK1 b kq - 1 12",
+      "r1bqk2r/ppp2ppp/2n1p3/b7/2QP4/5NP1/P3PPBP/1R3RK1 b kq - 0 13",
+      "r1bqk2r/ppp2ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R1R2K1 b kq - 2 14",
+      "r2qk2r/pppb1ppp/1bn1p3/4N3/2QP4/6P1/P3PPBP/1R1R2K1 b kq - 4 15",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/3P4/6P1/P3PPBP/1RQR2K1 b kq - 6 16",
+      "r2qk2r/pppb1ppp/1b2p3/n2BN3/3P4/6P1/P3PP1P/1RQR2K1 b kq - 8 17",
+      "r2qk2r/pppb1ppp/1b6/n2pN3/3P4/2Q3P1/P3PP1P/1R1R2K1 b kq - 1 18",
+      "r2qkr2/pppb1ppp/1b6/n2p4/3P4/2Q2NP1/P3PP1P/1R1R2K1 b q - 3 19",
+      "r2qkr2/pppb1ppp/1bn5/3p4/3P4/5NP1/P3PP1P/1R1RQ1K1 b q - 5 20",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/6P1/P2NPP1P/1R1RQ1K1 b q - 7 21",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/P5P1/3NPP1P/1R1RQ1K1 b q - 0 22",
+      "r3kr2/ppp1qppp/1bn1b3/3p4/3PP3/P5P1/3N1P1P/1R1RQ1K1 b q e3 0 23",
+      "2kr1r2/ppp1qppp/1bn1b3/3P4/3P4/P5P1/3N1P1P/1R1RQ1K1 b - - 0 24",
+      "2k2r2/ppp1qppp/1bn1b3/3r4/3P4/P5P1/3NQP1P/1R1R2K1 b - - 1 25",
+      "2k2r2/ppp1qppp/1b2b3/3r4/3n4/P3Q1P1/3N1P1P/1R1R2K1 b - - 1 26",
+      "2k2r2/ppp1qppp/1b2b3/1n1r4/8/P3Q1P1/3N1P1P/1R1R3K b - - 3 27",
+      "2k2r2/ppp1qppp/4b3/1R1r4/8/P3b1P1/3N1P1P/3R3K b - - 0 28",
+      "2k2r2/ppp1qppp/4b3/1R6/7P/P3b1P1/3r1P2/3R3K b - h3 0 29",
+      "2k2r2/ppp1qppp/8/1R1b4/7P/P3b1P1/3r1P1K/3R4 b - - 2 30",
+      "2k2r2/ppp2ppp/8/3b4/4q2P/P3b1P1/3r1P1K/1R1R4 b - - 4 31",
+      "2k2r2/ppp2ppp/8/3b4/P6P/4b1P1/3r1PqK/1R1R4 b - - 0 32"
+    ],
+    "true": [
+      "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+      "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 1 4",
+      "r1bqkb1r/ppp2ppp/2n1pn2/3p4/2PP4/5NP1/PP2PP1P/RNBQKB1R w KQkq d6 0 5",
+      "r1bqk2r/ppp2ppp/2n1pn2/3p4/1bPP4/5NP1/PP2PPBP/RNBQK2R w KQkq - 2 6",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/1bPPn3/2N2NP1/PP2PPBP/R1BQK2R w KQkq - 4 7",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPnB2/2b2NP1/PP2PPBP/R2QK2R w KQkq - 0 8",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PPn3/5NP1/Pb1BPPBP/R2QK2R w KQkq - 0 9",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2n2NP1/Pb1BPPBP/1R1QK2R w Kkq - 2 10",
+      "r1bqk2r/ppp2ppp/2n1p3/3p4/2PP4/2b2NP1/P3PPBP/1R1QK2R w Kkq - 0 11",
+      "r1bqk2r/ppp2ppp/2n1p3/8/2pP4/2b2NP1/P3PPBP/1R1Q1RK1 w kq - 0 12",
+      "r1bqk2r/ppp2ppp/2n1p3/b7/2pP4/5NP1/P1Q1PPBP/1R3RK1 w kq - 2 13",
+      "r1bqk2r/ppp2ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R3RK1 w kq - 1 14",
+      "r2qk2r/pppb1ppp/1bn1p3/8/2QP4/5NP1/P3PPBP/1R1R2K1 w kq - 3 15",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/2QP4/6P1/P3PPBP/1R1R2K1 w kq - 5 16",
+      "r2qk2r/pppb1ppp/1b2p3/n3N3/3P4/6P1/P3PPBP/1RQR2K1 w kq - 7 17",
+      "r2qk2r/pppb1ppp/1b6/n2pN3/3P4/6P1/P3PP1P/1RQR2K1 w kq - 0 18",
+      "r2qkr2/pppb1ppp/1b6/n2pN3/3P4/2Q3P1/P3PP1P/1R1R2K1 w q - 2 19",
+      "r2qkr2/pppb1ppp/1bn5/3p4/3P4/2Q2NP1/P3PP1P/1R1R2K1 w q - 4 20",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/5NP1/P3PP1P/1R1RQ1K1 w q - 6 21",
+      "r2qkr2/ppp2ppp/1bn1b3/3p4/3P4/6P1/P2NPP1P/1R1RQ1K1 w q - 8 22",
+      "r3kr2/ppp1qppp/1bn1b3/3p4/3P4/P5P1/3NPP1P/1R1RQ1K1 w q - 1 23",
+      "2kr1r2/ppp1qppp/1bn1b3/3p4/3PP3/P5P1/3N1P1P/1R1RQ1K1 w - - 1 24",
+      "2k2r2/ppp1qppp/1bn1b3/3r4/3P4/P5P1/3N1P1P/1R1RQ1K1 w - - 0 25",
+      "2k2r2/ppp1qppp/1b2b3/3r4/3n4/P5P1/3NQP1P/1R1R2K1 w - - 0 26",
+      "2k2r2/ppp1qppp/1b2b3/1n1r4/8/P3Q1P1/3N1P1P/1R1R2K1 w - - 2 27",
+      "2k2r2/ppp1qppp/4b3/1n1r4/8/P3b1P1/3N1P1P/1R1R3K w - - 0 28",
+      "2k2r2/ppp1qppp/4b3/1R6/8/P3b1P1/3r1P1P/3R3K w - - 0 29",
+      "2k2r2/ppp1qppp/8/1R1b4/7P/P3b1P1/3r1P2/3R3K w - - 1 30",
+      "2k2r2/ppp2ppp/8/1R1b4/4q2P/P3b1P1/3r1P1K/3R4 w - - 3 31",
+      "2k2r2/ppp2ppp/8/3b4/7P/P3b1P1/3r1PqK/1R1R4 w - - 5 32"
+    ]
+  },
+  "requested_moves": {
+    "black": [
+      {
+        "type": "Move",
+        "value": "g8f6"
+      },
+      {
+        "type": "Move",
+        "value": "e7e6"
+      },
+      {
+        "type": "Move",
+        "value": "b8c6"
+      },
+      {
+        "type": "Move",
+        "value": "d7d5"
+      },
+      {
+        "type": "Move",
+        "value": "f8b4"
+      },
+      {
+        "type": "Move",
+        "value": "f6e4"
+      },
+      {
+        "type": "Move",
+        "value": "b4c3"
+      },
+      {
+        "type": "Move",
+        "value": "c3b2"
+      },
+      {
+        "type": "Move",
+        "value": "e4c3"
+      },
+      {
+        "type": "Move",
+        "value": "b2c3"
+      },
+      {
+        "type": "Move",
+        "value": "d5c4"
+      },
+      {
+        "type": "Move",
+        "value": "c3a5"
+      },
+      {
+        "type": "Move",
+        "value": "a5b6"
+      },
+      {
+        "type": "Move",
+        "value": "c8d7"
+      },
+      {
+        "type": "Move",
+        "value": "c6a5"
+      },
+      {
+        "type": "Move",
+        "value": "b7a6"
+      },
+      {
+        "type": "Move",
+        "value": "e6d5"
+      },
+      {
+        "type": "Move",
+        "value": "h8f8"
+      },
+      {
+        "type": "Move",
+        "value": "a5c6"
+      },
+      {
+        "type": "Move",
+        "value": "d7e6"
+      },
+      {
+        "type": "Move",
+        "value": "d5c4"
+      },
+      {
+        "type": "Move",
+        "value": "d8e7"
+      },
+      {
+        "type": "Move",
+        "value": "e8c8"
+      },
+      {
+        "type": "Move",
+        "value": "d8d5"
+      },
+      {
+        "type": "Move",
+        "value": "c6d4"
+      },
+      {
+        "type": "Move",
+        "value": "d4b5"
+      },
+      {
+        "type": "Move",
+        "value": "b6e3"
+      },
+      {
+        "type": "Move",
+        "value": "d5d2"
+      },
+      {
+        "type": "Move",
+        "value": "e6d5"
+      },
+      {
+        "type": "Move",
+        "value": "e7e4"
+      },
+      {
+        "type": "Move",
+        "value": "e4g2"
+      },
+      {
+        "type": "Move",
+        "value": "g2h2"
+      }
+    ],
+    "white": [
+      {
+        "type": "Move",
+        "value": "d2d4"
+      },
+      {
+        "type": "Move",
+        "value": "c2c4"
+      },
+      {
+        "type": "Move",
+        "value": "g2g3"
+      },
+      {
+        "type": "Move",
+        "value": "g1f3"
+      },
+      {
+        "type": "Move",
+        "value": "f1g2"
+      },
+      {
+        "type": "Move",
+        "value": "b1c3"
+      },
+      {
+        "type": "Move",
+        "value": "c1f4"
+      },
+      {
+        "type": "Move",
+        "value": "f4d2"
+      },
+      {
+        "type": "Move",
+        "value": "a1b1"
+      },
+      {
+        "type": "Move",
+        "value": "d2b4"
+      },
+      {
+        "type": "Move",
+        "value": "e1g1"
+      },
+      {
+        "type": "Move",
+        "value": "d1c2"
+      },
+      {
+        "type": "Move",
+        "value": "c2c4"
+      },
+      {
+        "type": "Move",
+        "value": "f1d1"
+      },
+      {
+        "type": "Move",
+        "value": "f3e5"
+      },
+      {
+        "type": "Move",
+        "value": "c4c1"
+      },
+      {
+        "type": "Move",
+        "value": "g2d5"
+      },
+      {
+        "type": "Move",
+        "value": "c1c3"
+      },
+      {
+        "type": "Move",
+        "value": "e5f3"
+      },
+      {
+        "type": "Move",
+        "value": "c3e1"
+      },
+      {
+        "type": "Move",
+        "value": "f3d2"
+      },
+      {
+        "type": "Move",
+        "value": "a2a3"
+      },
+      {
+        "type": "Move",
+        "value": "e2e4"
+      },
+      {
+        "type": "Move",
+        "value": "e4d5"
+      },
+      {
+        "type": "Move",
+        "value": "e1e2"
+      },
+      {
+        "type": "Move",
+        "value": "e2e3"
+      },
+      {
+        "type": "Move",
+        "value": "g1h1"
+      },
+      {
+        "type": "Move",
+        "value": "b1b5"
+      },
+      {
+        "type": "Move",
+        "value": "h2h4"
+      },
+      {
+        "type": "Move",
+        "value": "h1h2"
+      },
+      {
+        "type": "Move",
+        "value": "b5b1"
+      },
+      {
+        "type": "Move",
+        "value": "a3a4"
+      }
+    ]
+  },
+  "sense_results": {
+    "false": [
+      [
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          null
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          4,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ],
+        [
+          5,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          6,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ]
+      ],
+      [
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          null
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          null
+        ]
+      ],
+      [
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          24,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          16,
+          null
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          8,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          9,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          10,
+          null
+        ]
+      ],
+      [
+        [
+          18,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          2,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          4,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ]
+      ],
+      [
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          1,
+          null
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ]
+      ],
+      [
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ]
+      ],
+      [
+        [
+          21,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          23,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          15,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          null
+        ],
+        [
+          7,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ]
+      ],
+      [
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          4,
+          null
+        ],
+        [
+          5,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ]
+      ],
+      [
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          null
+        ],
+        [
+          10,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          null
+        ]
+      ],
+      [],
+      [
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ]
+      ],
+      [
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ]
+      ],
+      [
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          null
+        ],
+        [
+          36,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          26,
+          null
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          null
+        ]
+      ],
+      [
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ],
+        [
+          36,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ]
+      ],
+      [
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          36,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ]
+      ],
+      [
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          null
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          null
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ]
+      ],
+      [
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          null
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          29,
+          null
+        ]
+      ],
+      [
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          9,
+          null
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ]
+      ],
+      [
+        [
+          40,
+          null
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          32,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          24,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          null
+        ]
+      ],
+      [
+        [
+          59,
+          null
+        ],
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          61,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          45,
+          null
+        ]
+      ],
+      [
+        [
+          16,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          8,
+          null
+        ],
+        [
+          9,
+          null
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          0,
+          null
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          2,
+          null
+        ]
+      ],
+      [
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ],
+        [
+          21,
+          null
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          12,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          4,
+          null
+        ],
+        [
+          5,
+          null
+        ]
+      ],
+      [
+        [
+          20,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          12,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          null
+        ],
+        [
+          4,
+          null
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ]
+      ],
+      [
+        [
+          27,
+          null
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ],
+        [
+          21,
+          null
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          12,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          23,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          null
+        ],
+        [
+          15,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          null
+        ],
+        [
+          7,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ]
+      ],
+      [
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          10,
+          null
+        ],
+        [
+          11,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          12,
+          null
+        ],
+        [
+          2,
+          null
+        ],
+        [
+          3,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          4,
+          null
+        ]
+      ],
+      [
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          23,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          null
+        ],
+        [
+          15,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          null
+        ],
+        [
+          7,
+          null
+        ]
+      ],
+      [
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          23,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          null
+        ],
+        [
+          15,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          null
+        ],
+        [
+          7,
+          null
+        ]
+      ],
+      [
+        [
+          21,
+          null
+        ],
+        [
+          22,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          23,
+          null
+        ],
+        [
+          13,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          14,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          15,
+          {
+            "type": "Piece",
+            "value": "K"
+          }
+        ],
+        [
+          5,
+          null
+        ],
+        [
+          6,
+          null
+        ],
+        [
+          7,
+          null
+        ]
+      ]
+    ],
+    "true": [
+      [
+        [
+          16,
+          null
+        ],
+        [
+          17,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          8,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          9,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          10,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          0,
+          {
+            "type": "Piece",
+            "value": "R"
+          }
+        ],
+        [
+          1,
+          {
+            "type": "Piece",
+            "value": "N"
+          }
+        ],
+        [
+          2,
+          {
+            "type": "Piece",
+            "value": "B"
+          }
+        ]
+      ],
+      [
+        [
+          45,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          38,
+          null
+        ],
+        [
+          39,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          30,
+          null
+        ],
+        [
+          31,
+          null
+        ]
+      ],
+      [
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          null
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          null
+        ]
+      ],
+      [
+        [
+          41,
+          null
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          41,
+          null
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          36,
+          null
+        ]
+      ],
+      [
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          38,
+          null
+        ],
+        [
+          39,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          30,
+          null
+        ],
+        [
+          31,
+          null
+        ]
+      ],
+      [
+        [
+          40,
+          null
+        ],
+        [
+          41,
+          null
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          32,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          24,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ]
+      ],
+      [
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          27,
+          {
+            "type": "Piece",
+            "value": "P"
+          }
+        ],
+        [
+          28,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          null
+        ]
+      ],
+      [
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          38,
+          null
+        ],
+        [
+          39,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          30,
+          null
+        ],
+        [
+          31,
+          null
+        ]
+      ],
+      [
+        [
+          61,
+          null
+        ],
+        [
+          62,
+          null
+        ],
+        [
+          63,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          55,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ]
+      ],
+      [
+        [
+          61,
+          null
+        ],
+        [
+          62,
+          null
+        ],
+        [
+          63,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          55,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ]
+      ],
+      [
+        [
+          59,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          61,
+          null
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ]
+      ],
+      [
+        [
+          40,
+          null
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          32,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          24,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          {
+            "type": "Piece",
+            "value": "Q"
+          }
+        ]
+      ],
+      [
+        [
+          59,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          61,
+          null
+        ],
+        [
+          51,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ]
+      ],
+      [
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          61,
+          null
+        ],
+        [
+          62,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ]
+      ],
+      [
+        [
+          57,
+          null
+        ],
+        [
+          58,
+          null
+        ],
+        [
+          59,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          49,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ]
+      ],
+      [
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          61,
+          null
+        ],
+        [
+          62,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          44,
+          null
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ]
+      ],
+      [
+        [
+          40,
+          null
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          32,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          24,
+          null
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          null
+        ]
+      ],
+      [
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          55,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          38,
+          null
+        ],
+        [
+          39,
+          null
+        ]
+      ],
+      [
+        [
+          58,
+          null
+        ],
+        [
+          59,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ]
+      ],
+      [
+        [
+          61,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          62,
+          null
+        ],
+        [
+          63,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          55,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ]
+      ],
+      [
+        [
+          58,
+          null
+        ],
+        [
+          59,
+          null
+        ],
+        [
+          60,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ]
+      ],
+      [
+        [
+          56,
+          null
+        ],
+        [
+          57,
+          null
+        ],
+        [
+          58,
+          {
+            "type": "Piece",
+            "value": "k"
+          }
+        ],
+        [
+          48,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          49,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          40,
+          null
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ]
+      ],
+      [
+        [
+          59,
+          null
+        ],
+        [
+          60,
+          null
+        ],
+        [
+          61,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          45,
+          null
+        ]
+      ],
+      [
+        [
+          49,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          50,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          41,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          33,
+          null
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ]
+      ],
+      [
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          54,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          55,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          46,
+          null
+        ],
+        [
+          47,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          38,
+          null
+        ],
+        [
+          39,
+          null
+        ]
+      ],
+      [
+        [
+          41,
+          null
+        ],
+        [
+          42,
+          null
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          33,
+          {
+            "type": "Piece",
+            "value": "n"
+          }
+        ],
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          25,
+          null
+        ],
+        [
+          26,
+          null
+        ],
+        [
+          27,
+          null
+        ]
+      ],
+      [
+        [
+          35,
+          null
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          37,
+          null
+        ],
+        [
+          27,
+          null
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          29,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          21,
+          null
+        ]
+      ],
+      [
+        [
+          59,
+          null
+        ],
+        [
+          60,
+          null
+        ],
+        [
+          61,
+          {
+            "type": "Piece",
+            "value": "r"
+          }
+        ],
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          {
+            "type": "Piece",
+            "value": "q"
+          }
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          null
+        ],
+        [
+          45,
+          null
+        ]
+      ],
+      [
+        [
+          51,
+          null
+        ],
+        [
+          52,
+          null
+        ],
+        [
+          53,
+          {
+            "type": "Piece",
+            "value": "p"
+          }
+        ],
+        [
+          43,
+          null
+        ],
+        [
+          44,
+          null
+        ],
+        [
+          45,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          37,
+          null
+        ]
+      ],
+      [
+        [
+          34,
+          null
+        ],
+        [
+          35,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ],
+        [
+          36,
+          null
+        ],
+        [
+          26,
+          null
+        ],
+        [
+          27,
+          null
+        ],
+        [
+          28,
+          null
+        ],
+        [
+          18,
+          null
+        ],
+        [
+          19,
+          null
+        ],
+        [
+          20,
+          {
+            "type": "Piece",
+            "value": "b"
+          }
+        ]
+      ]
+    ]
+  },
+  "senses": {
+    "false": [
+      13,
+      20,
+      18,
+      20,
+      17,
+      11,
+      10,
+      20,
+      10,
+      14,
+      12,
+      10,
+      null,
+      26,
+      26,
+      35,
+      43,
+      43,
+      10,
+      36,
+      10,
+      33,
+      52,
+      9,
+      12,
+      13,
+      20,
+      14,
+      11,
+      14,
+      14,
+      14
+    ],
+    "true": [
+      9,
+      38,
+      35,
+      34,
+      34,
+      43,
+      38,
+      33,
+      27,
+      38,
+      54,
+      54,
+      52,
+      33,
+      52,
+      53,
+      50,
+      53,
+      33,
+      46,
+      51,
+      54,
+      51,
+      49,
+      52,
+      42,
+      46,
+      34,
+      28,
+      52,
+      44,
+      27
+    ]
+  },
+  "taken_moves": {
+    "black": [
+      {
+        "type": "Move",
+        "value": "g8f6"
+      },
+      {
+        "type": "Move",
+        "value": "e7e6"
+      },
+      {
+        "type": "Move",
+        "value": "b8c6"
+      },
+      {
+        "type": "Move",
+        "value": "d7d5"
+      },
+      {
+        "type": "Move",
+        "value": "f8b4"
+      },
+      {
+        "type": "Move",
+        "value": "f6e4"
+      },
+      {
+        "type": "Move",
+        "value": "b4c3"
+      },
+      {
+        "type": "Move",
+        "value": "c3b2"
+      },
+      {
+        "type": "Move",
+        "value": "e4c3"
+      },
+      {
+        "type": "Move",
+        "value": "b2c3"
+      },
+      {
+        "type": "Move",
+        "value": "d5c4"
+      },
+      {
+        "type": "Move",
+        "value": "c3a5"
+      },
+      {
+        "type": "Move",
+        "value": "a5b6"
+      },
+      {
+        "type": "Move",
+        "value": "c8d7"
+      },
+      {
+        "type": "Move",
+        "value": "c6a5"
+      },
+      null,
+      {
+        "type": "Move",
+        "value": "e6d5"
+      },
+      {
+        "type": "Move",
+        "value": "h8f8"
+      },
+      {
+        "type": "Move",
+        "value": "a5c6"
+      },
+      {
+        "type": "Move",
+        "value": "d7e6"
+      },
+      null,
+      {
+        "type": "Move",
+        "value": "d8e7"
+      },
+      {
+        "type": "Move",
+        "value": "e8c8"
+      },
+      {
+        "type": "Move",
+        "value": "d8d5"
+      },
+      {
+        "type": "Move",
+        "value": "c6d4"
+      },
+      {
+        "type": "Move",
+        "value": "d4b5"
+      },
+      {
+        "type": "Move",
+        "value": "b6e3"
+      },
+      {
+        "type": "Move",
+        "value": "d5d2"
+      },
+      {
+        "type": "Move",
+        "value": "e6d5"
+      },
+      {
+        "type": "Move",
+        "value": "e7e4"
+      },
+      {
+        "type": "Move",
+        "value": "e4g2"
+      },
+      {
+        "type": "Move",
+        "value": "g2h2"
+      }
+    ],
+    "white": [
+      {
+        "type": "Move",
+        "value": "d2d4"
+      },
+      {
+        "type": "Move",
+        "value": "c2c4"
+      },
+      {
+        "type": "Move",
+        "value": "g2g3"
+      },
+      {
+        "type": "Move",
+        "value": "g1f3"
+      },
+      {
+        "type": "Move",
+        "value": "f1g2"
+      },
+      {
+        "type": "Move",
+        "value": "b1c3"
+      },
+      {
+        "type": "Move",
+        "value": "c1f4"
+      },
+      {
+        "type": "Move",
+        "value": "f4d2"
+      },
+      {
+        "type": "Move",
+        "value": "a1b1"
+      },
+      {
+        "type": "Move",
+        "value": "d2c3"
+      },
+      {
+        "type": "Move",
+        "value": "e1g1"
+      },
+      {
+        "type": "Move",
+        "value": "d1c2"
+      },
+      {
+        "type": "Move",
+        "value": "c2c4"
+      },
+      {
+        "type": "Move",
+        "value": "f1d1"
+      },
+      {
+        "type": "Move",
+        "value": "f3e5"
+      },
+      {
+        "type": "Move",
+        "value": "c4c1"
+      },
+      {
+        "type": "Move",
+        "value": "g2d5"
+      },
+      {
+        "type": "Move",
+        "value": "c1c3"
+      },
+      {
+        "type": "Move",
+        "value": "e5f3"
+      },
+      {
+        "type": "Move",
+        "value": "c3e1"
+      },
+      {
+        "type": "Move",
+        "value": "f3d2"
+      },
+      {
+        "type": "Move",
+        "value": "a2a3"
+      },
+      {
+        "type": "Move",
+        "value": "e2e4"
+      },
+      {
+        "type": "Move",
+        "value": "e4d5"
+      },
+      {
+        "type": "Move",
+        "value": "e1e2"
+      },
+      {
+        "type": "Move",
+        "value": "e2e3"
+      },
+      {
+        "type": "Move",
+        "value": "g1h1"
+      },
+      {
+        "type": "Move",
+        "value": "b1b5"
+      },
+      {
+        "type": "Move",
+        "value": "h2h4"
+      },
+      {
+        "type": "Move",
+        "value": "h1h2"
+      },
+      {
+        "type": "Move",
+        "value": "b5b1"
+      },
+      {
+        "type": "Move",
+        "value": "a3a4"
+      }
+    ]
+  },
+  "type": "GameHistory",
+  "white_name": "notRL",
+  "win_reason": {
+    "type": "WinReason",
+    "value": "KING_CAPTURE"
+  },
+  "winner_color": false
+}

@@ -50,7 +50,6 @@ public class Queen : Piece
     {
         var direction = GetNormalizedDirection(coords - OccupiedSquare);
         int range = Mathf.Max(Mathf.Abs(coords.x - OccupiedSquare.x), Mathf.Abs(coords.y - OccupiedSquare.y));
-        print(range);
         Vector2Int realCoords = coords;
 
         for (int i = 1; i <= range; i++)
