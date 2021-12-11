@@ -104,12 +104,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             _multiPlayerController.MakeEnemyPiecesInvisible();
         }
         
-        GameManager.Instance.playingAsBlack = team == 0;
-        if (!GameManager.Instance.flipCameraInMultiplayer)
-        {
-            GameManager.Instance.playingAsBlack = false;
-        }
-        
         _multiPlayerController.SetupCamera((TeamColor)team);
         if (team == 1) // white
         {

@@ -23,7 +23,7 @@ public abstract class ChessGameController : MonoBehaviour
     
     private Board _board;
     private UIManager _uiManager;
-    private CameraSetup _cameraSetup;
+    private CameraFlip _cameraFlip;
     
     private PieceCreator _pieceCreator;
     protected ChessPlayer _whitePlayer;
@@ -42,11 +42,11 @@ public abstract class ChessGameController : MonoBehaviour
     public abstract void TryToStartCurrentGame();
     public abstract bool CanPerformMove();
 
-    public void SetDependencies(UIManager uiManager, Board board, CameraSetup cameraSetup)
+    public void SetDependencies(UIManager uiManager, Board board, CameraFlip cameraFlip)
     {
         _uiManager = uiManager;
         _board = board;
-        _cameraSetup = cameraSetup;
+        _cameraFlip = cameraFlip;
     }
 
     public bool IsGameInProgress()
@@ -72,7 +72,7 @@ public abstract class ChessGameController : MonoBehaviour
 
     public void SetupCamera(TeamColor color)
     {
-        _cameraSetup.SetupCamera(color);
+        _cameraFlip.SetupCamera(color);
     }
 
     public void RestartGame()

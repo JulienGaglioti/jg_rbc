@@ -5,37 +5,47 @@ using UnityEngine;
 public class CameraSwitch : MonoBehaviour
 {
     private Camera mainCamera;
-    private Vector3 originalPosition;
-    private Vector3 originalRotation;
+    public Vector3 ortographicPosition;
+    public Vector3 defaultPerspectivePosition;
+    public Vector3 flippedPerspectivePosition;
+    public EmptyEventChannelSO cameraModeSwitched;
     private bool is2d;
 
     private void Awake()
     {
         mainCamera = GetComponent<Camera>();
-        Initialize();
-    }
-
-    public void Initialize()
-    {
-        originalPosition = transform.position;
-        originalRotation = transform.localEulerAngles;
     }
 
     public void SwitchMode()
     {
+        GameManager.Instance.is2d = !GameManager.Instance.is2d;
+        mainCamera.orthographic = GameManager.Instance.is2d;
+        cameraModeSwitched.RaiseEvent();
+        
         if (GameManager.Instance.is2d)
         {
-            GameManager.Instance.is2d = false;
-            mainCamera.transform.position = originalPosition;
-            mainCamera.transform.rotation = Quaternion.Euler(originalRotation);
-            mainCamera.orthographic = false;
+            mainCamera.transform.position = ortographicPosition;
+            if (!GameManager.Instance.cameraFlipped)
+            {
+                mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
+            }
+            else
+            {
+                mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, 0, -180));
+            }
         }
         else
         {
-            GameManager.Instance.is2d = true;
-            mainCamera.transform.position = new Vector3(0, 18, 0);
-            mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, originalRotation.y, 0));
-            mainCamera.orthographic = true;
+            if (!GameManager.Instance.cameraFlipped)
+            {
+                mainCamera.transform.position = defaultPerspectivePosition;
+                mainCamera.transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
+            }
+            else
+            {
+                mainCamera.transform.position = flippedPerspectivePosition;
+                mainCamera.transform.rotation = Quaternion.Euler(new Vector3(45, 180, 0));
+            }
         }
     }
 }

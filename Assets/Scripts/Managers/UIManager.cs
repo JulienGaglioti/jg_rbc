@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
 
     [Header("In Game Objects")] 
     [SerializeField] private GameObject passButton;
-    [SerializeField] private GameObject switchCameraButton;
+    [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject infoBox;
     
 
@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
 
     public void EnableInGameObjects()
     {
-        switchCameraButton.SetActive(true);
+        settingsButton.SetActive(true);
         passButton.SetActive(true);
         infoBox.SetActive(true);
     }
@@ -126,7 +126,7 @@ public class UIManager : MonoBehaviour
     public void ResetInitialUI()
     {
         DisableMenuScreens();
-        switchCameraButton.SetActive(false);
+        settingsButton.SetActive(false);
         passButton.SetActive(false);
         infoBox.SetActive(false);
         gameModeSelectionScreen.SetActive(true);

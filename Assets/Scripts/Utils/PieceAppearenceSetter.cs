@@ -17,7 +17,7 @@ public class PieceAppearenceSetter : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance.playingAsBlack)
+        if (GameManager.Instance.cameraFlipped)
         {
             FlipSprite();
         }
@@ -68,8 +68,15 @@ public class PieceAppearenceSetter : MonoBehaviour
         name = name + " SENSE";
     }
 
-    private void FlipSprite()
+    public void FlipSprite()
     {
-        spriteRenderer.transform.localEulerAngles = new Vector3(90, 180, 0);
+        if (GameManager.Instance.cameraFlipped)
+        {
+            spriteRenderer.transform.localEulerAngles = new Vector3(90, 180, 0);
+        }
+        else
+        {
+            spriteRenderer.transform.localEulerAngles = new Vector3(90, 0, 0);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class GameInitializer : MonoBehaviour
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private SenseManager senseManager;
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private CameraSetup cameraSetup;
+    [SerializeField] private CameraFlip cameraFlip;
     [SerializeField] private PassButtonDependency passButtonDependency;
     [SerializeField] private List<SensePlatformInputHandler> platforms;
 
@@ -40,7 +40,7 @@ public class GameInitializer : MonoBehaviour
         MultiPlayerBoard board = FindObjectOfType<MultiPlayerBoard>();
         MultiPlayerController controller = Instantiate(mpControllerPrefab);
         
-        controller.SetDependencies(uiManager, board, cameraSetup);
+        controller.SetDependencies(uiManager, board, cameraFlip);
         controller.CreatePlayers();
         controller.SetNetworkManager(networkManager);
         
@@ -58,7 +58,7 @@ public class GameInitializer : MonoBehaviour
         SinglePlayerBoard board = FindObjectOfType<SinglePlayerBoard>();
         SinglePlayerController controller = Instantiate(spControllerPrefab);
         
-        controller.SetDependencies(uiManager, board, cameraSetup);
+        controller.SetDependencies(uiManager, board, cameraFlip);
         controller.CreatePlayers();
         controller.SetTurnState(ChessGameController.TurnState.Move);
 

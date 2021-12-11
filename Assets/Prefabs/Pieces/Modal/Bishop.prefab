@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4853709493734165625}
   - component: {fileID: 9100919037434073902}
   - component: {fileID: -6852950491049236430}
+  - component: {fileID: 2909924583761409515}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -247,6 +248,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &2909924583761409515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650176052895468171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a969710a564c74ebf50df2e4ad4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  channel: {fileID: 11400000, guid: d77a51dca2a8bb64b9fc1db965bb97d4, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3370402022985438004}
+        m_TargetAssemblyTypeName: PieceAppearenceSetter, Assembly-CSharp
+        m_MethodName: FlipSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5410075804813037218
 GameObject:
