@@ -7,4 +7,9 @@ public class GameManager : Singleton<GameManager>
     public bool is2d;
     public bool makePiecesInvisible;
     public bool cameraFlipped;
+
+    public void SetInvisibleMode(bool b)
+    {
+        makePiecesInvisible = b;
+    }
 }

@@ -71,6 +71,7 @@ public class UIManager : MonoBehaviour
         networkManager.SetRoomName(roomNameInputField.text);
         roomName.SetText(roomNameInputField.text);
         networkManager.Connect();
+        EnableInGameObjects();
     }
 
     internal void ShowTeamSelectionScreen()
@@ -136,6 +137,7 @@ public class UIManager : MonoBehaviour
     {
         roomName.SetText("Room Name");
         networkManager.SetRoomName("");
+        roomNameInputField.text = "";
     }
     
 }

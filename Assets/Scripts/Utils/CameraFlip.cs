@@ -15,7 +15,9 @@ public class CameraFlip : MonoBehaviour
 
     public void SetupCamera(TeamColor team)
     {
-        if (team == TeamColor.Black)
+        
+        if ((team == TeamColor.Black && !GameManager.Instance.cameraFlipped) ||
+            (team == TeamColor.White && GameManager.Instance.cameraFlipped))
         {
             FlipCamera();
         }

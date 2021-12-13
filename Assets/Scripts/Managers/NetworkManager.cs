@@ -8,6 +8,7 @@ using Photon.Realtime;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private DisconnectionManager disconnectionManager;
     [SerializeField] private GameInitializer gameInitializer;
     [SerializeField] private EmptyEventChannelSO opponentLeft;
     private MultiPlayerController _multiPlayerController;
@@ -145,6 +146,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         opponentLeft.RaiseEvent();
+        Disconnect();
+        disconnectionManager.OnDisconnect();
     }
 
     #endregion
