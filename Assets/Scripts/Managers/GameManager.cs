@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public bool is2d;
+    public bool is2d = true;
     public bool makePiecesInvisible;
     public bool cameraFlipped;
 

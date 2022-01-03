@@ -87,7 +87,18 @@ public abstract class ChessGameController : MonoBehaviour
     public void SetTurnState(TurnState state)
     {
         turnState = state;
-        infoBox.RaiseEvent(state + " state");
+        if (state == TurnState.Sense)
+        {
+            infoBox.RaiseEvent("Click on a square to sense a 3x3 area");
+        }
+        else if (state == TurnState.Move)
+        {
+            infoBox.RaiseEvent("Drag to move a piece");
+        }
+        else
+        {
+            infoBox.RaiseEvent("Waiting for opponent's move");
+        }
     }
 
     private void DestroyAllPieces()

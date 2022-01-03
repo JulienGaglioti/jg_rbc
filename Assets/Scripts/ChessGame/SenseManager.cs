@@ -44,7 +44,6 @@ public class SenseManager : MonoBehaviour
         {
             CheckForOpponentPiece(square);
         }
-        
     }
 
     private void CheckForOpponentPiece(Vector2Int coords)
@@ -78,6 +77,42 @@ public class SenseManager : MonoBehaviour
         }
 
         senseMatrix[coords.x, coords.y] = null;
+    }
+
+    public void InitialSense()
+    {
+        if (_chessGameController.GetLocalPlayer().Team == TeamColor.White)
+        {
+            List<Vector2Int> coordinatesToSense = new List<Vector2Int>();
+            for (int i = 6; i <= 7; i++)
+            {
+                for (int j = 0; j <= 7; j++)
+                {
+                    coordinatesToSense.Add(new Vector2Int(j, i));
+                }
+            }
+
+            foreach (var square in coordinatesToSense)
+            {
+                CheckForOpponentPiece(square);
+            }
+        }
+        else
+        {
+            List<Vector2Int> coordinatesToSense = new List<Vector2Int>();
+            for (int i = 0; i <= 1; i++)
+            {
+                for (int j = 0; j <= 7; j++)
+                {
+                    coordinatesToSense.Add(new Vector2Int(j, i));
+                }
+            }
+
+            foreach (var square in coordinatesToSense)
+            {
+                CheckForOpponentPiece(square);
+            }
+        }
     }
 
 }
